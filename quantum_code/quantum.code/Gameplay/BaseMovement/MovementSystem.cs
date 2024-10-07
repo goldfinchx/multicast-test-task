@@ -1,7 +1,6 @@
-﻿using System.Diagnostics;
-using Photon.Deterministic;
+﻿using Photon.Deterministic;
 
-namespace Quantum.Gameplay.MovementSystem;
+namespace Quantum.Gameplay.BaseMovement;
 
 public unsafe class MovementSystem : SystemMainThreadFilter<MovementSystem.Filter> {
 

@@ -1,4 +1,4 @@
-﻿using Quantum.Gameplay.MovementSystem;
+﻿using Quantum.Gameplay.BaseMovement;
 
 namespace Quantum {
   public static class SystemSetup {
