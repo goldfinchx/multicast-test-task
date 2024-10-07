@@ -80,7 +80,7 @@
     <Compile Include="Core\Core.cs" />
     <Compile Include="Frame.User.cs" />
     <Compile Include="FrameContext.User.cs" />
-    <Compile Include="Gameplay\MovementSystem\MovementSystem.cs" />
+    <Compile Include="Gameplay\BaseMovement\MovementSystem.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
     <Compile Include="RuntimePlayer.User.cs" />
     <Compile Include="SimulationConfig.User.cs" />
@@ -91,7 +91,10 @@
     <EmbeddedResource Include="db.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Gameplay\MovementSystem\Movement.qtn" />
+    <Content Include="Gameplay\BaseMovement\Movement.qtn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gameplay\PlayerMovement\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
