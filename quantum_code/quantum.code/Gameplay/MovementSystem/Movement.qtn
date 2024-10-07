@@ -1,0 +1,4 @@
+﻿component Movement {
+   FPVector3 Target;
+   FP Speed;
+}
