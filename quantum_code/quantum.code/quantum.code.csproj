@@ -81,6 +81,8 @@
     <Compile Include="Frame.User.cs" />
     <Compile Include="FrameContext.User.cs" />
     <Compile Include="Gameplay\BaseMovement\MovementSystem.cs" />
+    <Compile Include="Gameplay\Input\Input.cs" />
+    <Compile Include="Gameplay\PlayerMovement\PlayerMovementSystem.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
     <Compile Include="RuntimePlayer.User.cs" />
     <Compile Include="SimulationConfig.User.cs" />
@@ -92,9 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gameplay\BaseMovement\Movement.qtn" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gameplay\PlayerMovement\" />
+    <Content Include="Gameplay\Input\PlayerInput.qtn" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
