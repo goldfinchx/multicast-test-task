@@ -1,5 +1,4 @@
-﻿using System;
-using Photon.Deterministic;
+﻿using Photon.Deterministic;
 using Quantum;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,7 +15,12 @@ namespace Photon.QuantumDemo.Game.Scripts {
         }
 
         private void OnEnable() {
+            inputActions.Enable();
             QuantumCallback.Subscribe(this, (CallbackPollInput callback) => PollInput(callback));
+        }
+
+        private void OnDisable() {
+            inputActions.Disable();
         }
 
         private void PollInput(CallbackPollInput callback) {
@@ -24,5 +28,6 @@ namespace Photon.QuantumDemo.Game.Scripts {
             input.Movement = movementAction.ReadValue<Vector2>().ToFPVector2();
             callback.SetInput(input, DeterministicInputFlags.Repeatable);
         }
+        
     }
 }
