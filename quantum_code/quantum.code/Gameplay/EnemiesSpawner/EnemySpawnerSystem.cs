@@ -13,6 +13,7 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly {
         }
     }
     
+
     public void SpawnEnemy(Frame frame) {
         AssetRef enemyPrefab = GetRandomEnemyPrefab(frame);
         FPVector3 spawnPosition = GetRandomSpawnPosition(frame);
