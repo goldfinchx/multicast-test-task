@@ -31,6 +31,7 @@ namespace Quantum.Editor {
       public Quantum.BinaryData[] BinaryData = {};
       public Quantum.CharacterController2DConfig[] CharacterController2DConfig = {};
       public Quantum.CharacterController3DConfig[] CharacterController3DConfig = {};
+      public Quantum.EnemySpawnerConfig[] EnemySpawnerConfig = {};
       public Quantum.EntityPrototype[] EntityPrototype = {};
       public Quantum.EntityView[] EntityView = {};
       public Quantum.Map[] Map = {};

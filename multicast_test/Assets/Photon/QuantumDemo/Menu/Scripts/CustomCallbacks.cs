@@ -16,8 +16,7 @@ public class CustomCallbacks : QuantumCallbacks {
     }
   }
 
-  public override void OnGameResync(QuantumGame game)
-  {
+  public override void OnGameResync(QuantumGame game) {
     Debug.Log("Detected Resync. Verified tick: " + game.Frames.Verified.Number);
   }
 }

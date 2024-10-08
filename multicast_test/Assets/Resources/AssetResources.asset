@@ -46,6 +46,11 @@ MonoBehaviour:
         Id:
           Value: 247827484427304855
       ResourcePath: DB/Hero
+    - Path: Resources/DB/Easy Enemy|EntityView
+      AssetRef:
+        Id:
+          Value: 841351352780042196
+      ResourcePath: DB/Easy Enemy
     - Path: Resources/DB/Hero|EntityView
       AssetRef:
         Id:
@@ -61,3 +66,13 @@ MonoBehaviour:
         Id:
           Value: 3093865984696992040
       ResourcePath: DB/Map1_mesh
+    - Path: Resources/DB/Easy Enemy|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 3349904209301087452
+      ResourcePath: DB/Easy Enemy
+    - Path: Resources/DB/Configs/Enemy Spawner Config
+      AssetRef:
+        Id:
+          Value: 3478395606903441237
+      ResourcePath: DB/Configs/Enemy Spawner Config
