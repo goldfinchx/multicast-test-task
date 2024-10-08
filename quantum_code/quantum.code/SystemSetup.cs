@@ -1,4 +1,5 @@
 ﻿using Quantum.Gameplay.BaseMovement;
+using Quantum.Gameplay.BasePlayer;
 using Quantum.Gameplay.Health;
 using Quantum.Gameplay.PlayerMovement;
 
@@ -19,7 +20,8 @@ namespace Quantum {
         new Core.EntityPrototypeSystem(),
         new Core.PlayerConnectedSystem(),
 
-        // user systems go here 
+        // user systems go here
+        new PlayerSpawnSystem(),
         new MovementSystem(),
         new PlayerMovementSystem(),
         new HealthSystem()

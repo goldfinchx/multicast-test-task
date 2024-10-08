@@ -1890,7 +1890,7 @@ namespace Quantum {
 namespace Quantum {
 
   public interface ISignalOnPlayerDataSet : ISignal {
-    void OnPlayerDataSet(Frame f, PlayerRef player);
+    void OnPlayerDataSet(Frame f, PlayerRef playerRef);
   }
 
   [Serializable]

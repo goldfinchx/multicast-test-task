@@ -84,6 +84,7 @@
     <Compile Include="Gameplay\Health\HealthSystem.cs" />
     <Compile Include="Gameplay\Input\Input.cs" />
     <Compile Include="Gameplay\PlayerMovement\PlayerMovementSystem.cs" />
+    <Compile Include="Gameplay\BasePlayer\PlayerSpawnSystem.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
     <Compile Include="RuntimePlayer.User.cs" />
     <Compile Include="SimulationConfig.User.cs" />
@@ -98,7 +99,7 @@
     <Content Include="Gameplay\Death\DeadMarker.qtn" />
     <Content Include="Gameplay\Health\Health.qtn" />
     <Content Include="Gameplay\Input\PlayerInput.qtn" />
-    <Content Include="Gameplay\Player\PlayerMarker.qtn" />
+    <Content Include="Gameplay\BasePlayer\Player.qtn" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
