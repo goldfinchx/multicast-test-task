@@ -17,7 +17,7 @@ public unsafe class PlayerMovementSystem : SystemMainThreadFilter<PlayerMovement
         if (playerInput == null) {
             return;
         }
-
+        
         FPVector2 movementInput = playerInput->Movement;
         if (movementInput == default) {
             return;

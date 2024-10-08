@@ -1,0 +1,3 @@
+component DeadMarker {
+    Boolean IsDead;
+}

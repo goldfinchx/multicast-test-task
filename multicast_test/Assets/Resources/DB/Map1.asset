@@ -88,18 +88,17 @@ MonoBehaviour:
   - Movement:
     - Target:
         X:
-          RawValue: 3276800
+          RawValue: 0
         Y:
           RawValue: 0
         Z:
-          RawValue: 3276800
+          RawValue: 0
       Speed:
-        RawValue: 131
+        RawValue: 65536
+    PlayerMarker:
+    - _empty_prototype_dummy_field_: 0
     CharacterController2D: []
-    CharacterController3D:
-    - Config:
-        Id:
-          Value: 4
+    CharacterController3D: []
     NavMeshAvoidanceAgent: []
     NavMeshAvoidanceObstacle: []
     NavMeshPathfinder: []
@@ -133,7 +132,7 @@ MonoBehaviour:
     - ShapeConfig:
         ShapeType: 1
         SphereRadius:
-          RawValue: 32768
+          RawValue: 38010
         PositionOffset:
           X:
             RawValue: 0
