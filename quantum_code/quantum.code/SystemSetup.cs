@@ -1,7 +1,8 @@
 ﻿using Quantum.Gameplay.BaseMovement;
 using Quantum.Gameplay.BasePlayer;
+using Quantum.Gameplay.Combat;
+using Quantum.Gameplay.Death;
 using Quantum.Gameplay.EnemiesSpawner;
-using Quantum.Gameplay.Health;
 using Quantum.Gameplay.PlayerMovement;
 
 namespace Quantum {
@@ -25,8 +26,9 @@ namespace Quantum {
         new PlayerSpawnSystem(),
         new MovementSystem(),
         new PlayerMovementSystem(),
-        new HealthSystem(),
-        new EnemySpawnerSystem()
+        new EnemySpawnerSystem(),
+        new CombatSystem(),
+        new DeathSystem()
       ];
     }
   }
