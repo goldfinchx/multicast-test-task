@@ -27,9 +27,12 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
             return;
         }
         
-        // todo damage
+        for (int i = 0; i < sortedHits.Count; i++) {
+            Hit3D hit = sortedHits[i];
+            frame.Signals.Damage(filter.Entity, hit.Entity, filter.Attacker->Stats.Damage);
+        }
         
-        
+        filter.Attacker->LastAttackTime = frame.ElapsedTime;
     }
 
     private HitCollection3D SortHitEntities(Frame frame, HitCollection3D hits, AttackerType attackerType) {

@@ -101,6 +101,7 @@
   <ItemGroup>
     <Content Include="Gameplay\Combat\Attacker.qtn" />
     <Content Include="Gameplay\BaseMovement\Movement.qtn" />
+    <Content Include="Gameplay\Damage\DamageSignal.qtn" />
     <Content Include="Gameplay\Death\DeadMarker.qtn" />
     <Content Include="Gameplay\Death\EntityDeathSignal.qtn" />
     <Content Include="Gameplay\EnemiesSpawner\EnemySpawnerConfig.qtn" />
@@ -108,9 +109,6 @@
     <Content Include="Gameplay\Health\Health.qtn" />
     <Content Include="Gameplay\Input\PlayerInput.qtn" />
     <Content Include="Gameplay\BasePlayer\Player.qtn" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gameplay\Damage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
