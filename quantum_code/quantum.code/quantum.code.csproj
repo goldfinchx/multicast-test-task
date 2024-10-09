@@ -78,9 +78,11 @@
     <Compile Include="Core\CodeGen.cs" />
     <Compile Include="CommandSetup.Legacy.cs" />
     <Compile Include="Core\Core.cs" />
+    <Compile Include="Extensions\Frame.cs" />
     <Compile Include="Frame.User.cs" />
     <Compile Include="FrameContext.User.cs" />
     <Compile Include="Gameplay\BaseMovement\MovementSystem.cs" />
+    <Compile Include="Gameplay\Combat\CombatSystem.cs" />
     <Compile Include="Gameplay\EnemiesSpawner\EnemySpawnerConfig.cs" />
     <Compile Include="Gameplay\EnemiesSpawner\EnemySpawnerSystem.cs" />
     <Compile Include="Gameplay\Health\HealthSystem.cs" />
@@ -97,6 +99,7 @@
     <EmbeddedResource Include="db.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Gameplay\Combat\Attacker.qtn" />
     <Content Include="Gameplay\BaseMovement\Movement.qtn" />
     <Content Include="Gameplay\Death\DeadMarker.qtn" />
     <Content Include="Gameplay\Death\EntityDeathSignal.qtn" />
@@ -105,6 +108,9 @@
     <Content Include="Gameplay\Health\Health.qtn" />
     <Content Include="Gameplay\Input\PlayerInput.qtn" />
     <Content Include="Gameplay\BasePlayer\Player.qtn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gameplay\Damage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

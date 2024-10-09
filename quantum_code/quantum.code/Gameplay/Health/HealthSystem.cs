@@ -10,6 +10,7 @@ public unsafe class HealthSystem : SystemMainThreadFilter<HealthSystem.Filter> {
 
     public override ComponentSet Without => ComponentSet.Create<DeadMarker>();
 
+    // todo move to damage system
     public override void Update(Frame frame, ref Filter filter) {
         if (filter.Health->Value > 0) {
             return;

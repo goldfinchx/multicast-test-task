@@ -1,0 +1,15 @@
+component Attacker {
+    AttackerStats Stats;
+    AttackerType Type;
+    FP LastAttackTime;
+}
+
+struct AttackerStats {
+    FP Range;
+    FP Damage;
+    FP Cooldown;
+}
+
+enum AttackerType {
+    Player, Enemy
+}
