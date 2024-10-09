@@ -84,9 +84,9 @@
     <Compile Include="Gameplay\BaseMovement\MovementSystem.cs" />
     <Compile Include="Gameplay\Combat\CombatSystem.cs" />
     <Compile Include="Gameplay\Damage\DamageSystem.cs" />
+    <Compile Include="Gameplay\Death\DeathSystem.cs" />
     <Compile Include="Gameplay\EnemiesSpawner\EnemySpawnerConfig.cs" />
     <Compile Include="Gameplay\EnemiesSpawner\EnemySpawnerSystem.cs" />
-    <Compile Include="Gameplay\Health\HealthSystem.cs" />
     <Compile Include="Gameplay\Input\Input.cs" />
     <Compile Include="Gameplay\PlayerMovement\PlayerMovementSystem.cs" />
     <Compile Include="Gameplay\BasePlayer\PlayerSpawnSystem.cs" />
@@ -102,6 +102,7 @@
   <ItemGroup>
     <Content Include="Gameplay\Combat\Attacker.qtn" />
     <Content Include="Gameplay\BaseMovement\Movement.qtn" />
+    <Content Include="Gameplay\Combat\OnAttackSignal.qtn" />
     <Content Include="Gameplay\Damage\OnDamageSignal.qtn" />
     <Content Include="Gameplay\Death\DeadMarker.qtn" />
     <Content Include="Gameplay\Death\EntityDeathSignal.qtn" />

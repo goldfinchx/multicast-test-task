@@ -1,5 +1,4 @@
-﻿using System;
-using Photon.Deterministic;
+﻿using Photon.Deterministic;
 using Quantum.Physics3D;
 
 namespace Quantum.Gameplay.Combat;
@@ -29,7 +28,7 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
         
         for (int i = 0; i < sortedHits.Count; i++) {
             Hit3D hit = sortedHits[i];
-            frame.Signals.OnDamage(filter.Entity, hit.Entity, filter.Attacker->Stats.Damage);
+            frame.Signals.OnAttack(filter.Entity, hit.Entity, filter.Attacker->Stats.Damage);
         }
         
         filter.Attacker->LastAttackTime = frame.ElapsedTime;
@@ -46,7 +45,7 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
             
             Hit3D hit = hits[i];
             EntityRef entity = hit.Entity;
-            if (!frame.Has<Quantum.Health>(entity)) {
+            if (!frame.Has<Health>(entity)) {
                 continue;
             }
 

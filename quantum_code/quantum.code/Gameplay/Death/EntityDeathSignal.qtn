@@ -1,1 +1,1 @@
-﻿signal OnDeath(EntityRef entity);
+﻿signal OnDeath(EntityRef entity, EntityRef killer);

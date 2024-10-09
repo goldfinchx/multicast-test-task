@@ -41,7 +41,7 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath {
         return spawnerConfig.EnemyPrefabs[randomIndex];
     }
     
-    public void OnDeath(Frame frame, EntityRef entity) {
+    public void OnDeath(Frame frame, EntityRef entity, EntityRef killer) {
         SpawnEnemy(frame);
     }
 }
