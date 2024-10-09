@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Settings:
     Identifier:
-      Path: Resources/DB/Easy Enemy|EntityPrototype
+      Path: Resources/DB/Enemies/Easy Enemy|EntityPrototype
       Guid:
         Value: 3349904209301087452
   Parent: {fileID: 1559800294590232648}
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Settings:
     Identifier:
-      Path: Resources/DB/Easy Enemy|EntityView
+      Path: Resources/DB/Enemies/Easy Enemy|EntityView
       Guid:
         Value: 841351352780042196
   Parent: {fileID: 151638590570058665}

@@ -1,4 +1,5 @@
-﻿using Photon.Deterministic;
+﻿using System.Diagnostics;
+using Photon.Deterministic;
 using Quantum.Physics3D;
 
 namespace Quantum.Gameplay.Combat;
@@ -20,29 +21,30 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
         if (hits.Count == 0) {
             return;
         }
-
-        HitCollection3D sortedHits = SortHitEntities(frame, hits, filter.Attacker->Type);
-        if (sortedHits.Count == 0) {
+        
+        HitCollection3D* sortedHits = SortHitEntities(frame, hits, filter.Attacker->Type);
+        if (sortedHits->Count == 0) {
             return;
         }
         
-        for (int i = 0; i < sortedHits.Count; i++) {
-            Hit3D hit = sortedHits[i];
-            frame.Signals.OnAttack(filter.Entity, hit.Entity, filter.Attacker->Stats.Damage);
+        for (int i = 0; i < sortedHits->Count; i++) {
+            Hit3D* hit = &sortedHits->HitsBuffer[i];
+            frame.Signals.OnAttack(hit->Entity, filter.Entity, filter.Attacker->Stats.Damage);
         }
         
         filter.Attacker->LastAttackTime = frame.ElapsedTime;
+        frame.Physics3D.FreePersistentHitCollection3D(sortedHits);
     }
 
-    private HitCollection3D SortHitEntities(Frame frame, HitCollection3D hits, AttackerType attackerType) {
+    private HitCollection3D* SortHitEntities(Frame frame, HitCollection3D hits, AttackerType attackerType) {
         hits.SortCastDistance();
-        HitCollection3D sortedHits = new();
-        
+        HitCollection3D* sortedHits = frame.Physics3D.AllocatePersistentHitCollection3D(3);
+
         for (int i = 0; i < hits.Count; i++) {
-            if (sortedHits.Count >= 3) {
+            if (sortedHits->Count >= 3) {
                 break;
             }
-            
+
             Hit3D hit = hits[i];
             EntityRef entity = hit.Entity;
             if (!frame.Has<Health>(entity)) {
@@ -59,7 +61,7 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
                 continue;
             }
 
-            sortedHits.Add(hit, frame.Context);
+            sortedHits->Add(hit, frame.Context);
         }
 
         return sortedHits;
@@ -71,6 +73,8 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
 
     private HitCollection3D QueryEntitiesAround(Frame frame, FPVector3 center, FP radius) {
         Shape3D castShape = Shape3D.CreateSphere(radius);
-        return frame.Physics3D.ShapeCastAll(center, FPQuaternion.Identity, castShape, FPVector3.Forward, options:QueryOptions.HitDynamics);
+        HitCollection3D queryEntitiesAround = frame.Physics3D.OverlapShape(center, FPQuaternion.Identity, castShape);
+        Log.Debug("QueryEntitiesAround count=" + queryEntitiesAround.Count);
+        return queryEntitiesAround;
     }
 }

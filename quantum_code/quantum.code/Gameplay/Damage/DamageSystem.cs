@@ -12,7 +12,10 @@ public unsafe class DamageSystem : SystemSignalsOnly, ISignalOnAttack {
             return;
         }
         
+        Log.Info("Attack! " + attacker + " -> " + victim + " Damage: " + damage + " health: " + health->Value);
+        
         health->Value -= damage;
+        frame.Signals.OnDamage(victim, attacker, damage);
     }
     
 }

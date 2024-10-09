@@ -104,7 +104,6 @@
     <Content Include="Gameplay\BaseMovement\Movement.qtn" />
     <Content Include="Gameplay\Combat\OnAttackSignal.qtn" />
     <Content Include="Gameplay\Damage\OnDamageSignal.qtn" />
-    <Content Include="Gameplay\Death\DeadMarker.qtn" />
     <Content Include="Gameplay\Death\EntityDeathSignal.qtn" />
     <Content Include="Gameplay\EnemiesSpawner\EnemySpawnerConfig.qtn" />
     <Content Include="Gameplay\Enemies\EnemyMarker.qtn" />
