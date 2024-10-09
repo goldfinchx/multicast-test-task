@@ -8,6 +8,7 @@ struct AttackerStats {
     FP Range;
     FP Cooldown;
     Int32 Damage;
+    Int32 ConcurrentAttacks;
 }
 
 enum AttackerType {

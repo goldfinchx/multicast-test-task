@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Photon.Deterministic;
+﻿using Photon.Deterministic;
 using Quantum.Physics3D;
 
 namespace Quantum.Gameplay.Combat;
@@ -22,7 +21,7 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
             return;
         }
         
-        HitCollection3D* sortedHits = SortHitEntities(frame, hits, filter.Attacker->Type);
+        HitCollection3D* sortedHits = SortHitEntities(frame, hits, filter.Attacker);
         if (sortedHits->Count == 0) {
             return;
         }
@@ -36,12 +35,12 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
         frame.Physics3D.FreePersistentHitCollection3D(sortedHits);
     }
 
-    private HitCollection3D* SortHitEntities(Frame frame, HitCollection3D hits, AttackerType attackerType) {
+    private HitCollection3D* SortHitEntities(Frame frame, HitCollection3D hits, Attacker* attacker) {
         hits.SortCastDistance();
         HitCollection3D* sortedHits = frame.Physics3D.AllocatePersistentHitCollection3D(3);
 
         for (int i = 0; i < hits.Count; i++) {
-            if (sortedHits->Count >= 3) {
+            if (sortedHits->Count >= attacker->Stats.ConcurrentAttacks) {
                 break;
             }
 
@@ -51,7 +50,7 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
                 continue;
             }
 
-            bool skip = attackerType switch {
+            bool skip = attacker->Type switch {
                 AttackerType.Enemy => frame.Has<EnemyMarker>(entity),
                 AttackerType.Player => frame.Has<Player>(entity),
                 _ => true
