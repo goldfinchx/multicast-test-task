@@ -4,7 +4,7 @@ using Quantum.Task;
 
 namespace Quantum.Gameplay.EnemiesSpawner;
 
-public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalEntityDeath {
+public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath {
 
     public override void OnInit(Frame frame) {
         Log.Debug("OnInit");
@@ -43,8 +43,7 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalEntityDeath {
         return spawnerConfig.EnemyPrefabs[randomIndex];
     }
     
-    public void EntityDeath(Frame frame, EntityRef entity, FPVector3 position) {
+    public void OnDeath(Frame frame, EntityRef entity, FPVector3 position) {
         SpawnEnemy(frame);
     }
-    
 }

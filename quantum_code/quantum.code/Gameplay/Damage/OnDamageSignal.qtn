@@ -1,0 +1,1 @@
+signal OnDamage(EntityRef victim, EntityRef attacker, FP damage);
