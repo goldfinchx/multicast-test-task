@@ -17,6 +17,6 @@ public unsafe class HealthSystem : SystemMainThreadFilter<HealthSystem.Filter> {
         }
         
         frame.Add<DeadMarker>(filter.Entity);
-        frame.Signals.EntityDeath(filter.Entity, filter.Transform->Position);
+        frame.Signals.OnDeath(filter.Entity);
     }
 }

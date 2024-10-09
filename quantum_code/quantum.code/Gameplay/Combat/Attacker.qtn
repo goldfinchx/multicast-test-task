@@ -6,8 +6,8 @@ component Attacker {
 
 struct AttackerStats {
     FP Range;
-    FP Damage;
     FP Cooldown;
+    Int32 Damage;
 }
 
 enum AttackerType {

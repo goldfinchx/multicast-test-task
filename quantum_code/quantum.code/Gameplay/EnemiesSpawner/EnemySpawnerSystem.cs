@@ -1,6 +1,4 @@
 ﻿using Photon.Deterministic;
-using Quantum.Core;
-using Quantum.Task;
 
 namespace Quantum.Gameplay.EnemiesSpawner;
 
@@ -43,7 +41,7 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath {
         return spawnerConfig.EnemyPrefabs[randomIndex];
     }
     
-    public void OnDeath(Frame frame, EntityRef entity, FPVector3 position) {
+    public void OnDeath(Frame frame, EntityRef entity) {
         SpawnEnemy(frame);
     }
 }

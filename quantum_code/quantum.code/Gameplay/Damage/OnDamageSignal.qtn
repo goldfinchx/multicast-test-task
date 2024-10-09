@@ -1,1 +1,1 @@
-signal OnDamage(EntityRef victim, EntityRef attacker, FP damage);
+signal OnDamage(EntityRef victim, EntityRef attacker, Int32 damage);
