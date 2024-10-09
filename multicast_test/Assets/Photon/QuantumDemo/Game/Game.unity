@@ -211,6 +211,9 @@ MonoBehaviour:
     SimulationConfig:
       Id:
         Value: 0
+    EnemySpawnerData:
+      Id:
+        Value: 2142521147518200342
   Players:
   - CharacterPrototype:
       Id:

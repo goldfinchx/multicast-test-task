@@ -1,12 +1,13 @@
 ﻿using Quantum.Gameplay.BaseMovement;
 using Quantum.Gameplay.BasePlayer;
+using Quantum.Gameplay.EnemiesSpawner;
 using Quantum.Gameplay.Health;
 using Quantum.Gameplay.PlayerMovement;
 
 namespace Quantum {
   public static class SystemSetup {
     public static SystemBase[] CreateSystems(RuntimeConfig gameConfig, SimulationConfig simulationConfig) {
-      return new SystemBase[] {
+      return [
         // pre-defined core systems
         //new Core.CullingSystem2D(), 
         new Core.CullingSystem3D(),
@@ -24,8 +25,9 @@ namespace Quantum {
         new PlayerSpawnSystem(),
         new MovementSystem(),
         new PlayerMovementSystem(),
-        new HealthSystem()
-      };
+        new HealthSystem(),
+        new EnemySpawnerSystem()
+      ];
     }
   }
 }

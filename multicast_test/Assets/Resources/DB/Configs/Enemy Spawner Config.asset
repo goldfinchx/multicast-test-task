@@ -9,14 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2853d0f8565ee244cb8526a784c914b9, type: 3}
+  m_Script: {fileID: 11500000, guid: d5d3f0ee5443f9f4da6b126b5128c3c3, type: 3}
   m_Name: Enemy Spawner Config
   m_EditorClassIdentifier: 
   Settings:
     Identifier:
       Path: Resources/DB/Configs/Enemy Spawner Config
       Guid:
-        Value: 3478395606903441237
+        Value: 2142521147518200342
+    BaseEnemyCount: 4
+    MaxSpawnRadius: 10
+    YLevel: 1
     EnemyPrefabs:
     - Id:
         Value: 3349904209301087452

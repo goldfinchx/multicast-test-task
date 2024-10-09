@@ -61,6 +61,11 @@ MonoBehaviour:
         Id:
           Value: 1710471675203725834
       ResourcePath: DB/Map1
+    - Path: Resources/DB/Configs/Enemy Spawner Config
+      AssetRef:
+        Id:
+          Value: 2142521147518200342
+      ResourcePath: DB/Configs/Enemy Spawner Config
     - Path: Resources/DB/Map1_mesh
       AssetRef:
         Id:
@@ -71,8 +76,3 @@ MonoBehaviour:
         Id:
           Value: 3349904209301087452
       ResourcePath: DB/Easy Enemy
-    - Path: Resources/DB/Configs/Enemy Spawner Config
-      AssetRef:
-        Id:
-          Value: 3478395606903441237
-      ResourcePath: DB/Configs/Enemy Spawner Config
