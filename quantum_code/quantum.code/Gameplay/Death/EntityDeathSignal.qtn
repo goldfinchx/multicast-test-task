@@ -1,0 +1,1 @@
+﻿signal EntityDeath(EntityRef entity, FPVector3 position);

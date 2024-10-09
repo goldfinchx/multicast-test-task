@@ -5,6 +5,7 @@ public unsafe class HealthSystem : SystemMainThreadFilter<HealthSystem.Filter> {
     public struct Filter {
         public EntityRef Entity;
         public Quantum.Health* Health;
+        public Transform3D* Transform;
     }
 
     public override ComponentSet Without => ComponentSet.Create<DeadMarker>();
@@ -13,7 +14,8 @@ public unsafe class HealthSystem : SystemMainThreadFilter<HealthSystem.Filter> {
         if (filter.Health->Value > 0) {
             return;
         }
-
+        
         frame.Add<DeadMarker>(filter.Entity);
+        frame.Signals.EntityDeath(filter.Entity, filter.Transform->Position);
     }
 }

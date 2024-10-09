@@ -4,7 +4,7 @@ using Quantum.Task;
 
 namespace Quantum.Gameplay.EnemiesSpawner;
 
-public unsafe class EnemySpawnerSystem : SystemSignalsOnly {
+public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalEntityDeath {
 
     public override void OnInit(Frame frame) {
         EnemySpawnerConfig spawnerConfig = frame.FindAsset<EnemySpawnerConfig>(frame.RuntimeConfig.EnemySpawnerData);
@@ -13,8 +13,7 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly {
         }
     }
     
-
-    public void SpawnEnemy(Frame frame) {
+    private void SpawnEnemy(Frame frame) {
         AssetRef enemyPrefab = GetRandomEnemyPrefab(frame);
         FPVector3 spawnPosition = GetRandomSpawnPosition(frame);
         EntityPrototype prototype = frame.FindAsset<EntityPrototype>(enemyPrefab.Id);
@@ -40,5 +39,8 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly {
         return spawnerConfig.EnemyPrefabs[randomIndex];
     }
     
+    public void EntityDeath(Frame frame, EntityRef entity, FPVector3 position) {
+        SpawnEnemy(frame);
+    }
     
 }
