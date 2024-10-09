@@ -13,5 +13,7 @@ public unsafe class PlayerSpawnSystem : SystemSignalsOnly, ISignalOnPlayerDataSe
         if (frame.Unsafe.TryGetPointer(entity, out Transform3D* transform)) {
             transform->Position.X = (int) playerRef;
         }
+        
+        frame.Signals.OnPlayerSpawn(entity);
     }
 }

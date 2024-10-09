@@ -5,11 +5,7 @@ namespace Quantum.Gameplay.EnemiesSpawner;
 public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath {
 
     public override void OnInit(Frame frame) {
-        Log.Debug("OnInit");
         EnemySpawnerConfig spawnerConfig = frame.FindAsset<EnemySpawnerConfig>(frame.RuntimeConfig.EnemySpawnerData);
-        Log.Debug("EnemySpawnerData " + frame.RuntimeConfig.EnemySpawnerData);
-        Log.Debug("SpawnerConfig " + spawnerConfig);
-        Log.Debug("BaseEnemyCount " + spawnerConfig.BaseEnemyCount);
         for (int i = 0; i < spawnerConfig.BaseEnemyCount; i++) {
             SpawnEnemy(frame);
         }
@@ -21,7 +17,7 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath {
         EntityPrototype prototype = frame.FindAsset<EntityPrototype>(enemyPrefab.Id);
         EntityRef entity = frame.Create(prototype);
         
-        if (frame.Unsafe.TryGetPointer<Transform3D>(entity, out Transform3D* transform)) {
+        if (frame.Unsafe.TryGetPointer(entity, out Transform3D* transform)) {
             transform->Position = spawnPosition;
         }
     }
