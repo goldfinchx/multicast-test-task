@@ -1,0 +1,19 @@
+component PlayerStats {
+   dictionary<StatType, Stat> Values;
+}
+
+enum StatType {
+    AttackDamage,
+    AttackRange,
+    MovementSpeed
+}
+
+struct Stat {
+    Int32 Level;
+    FP UpgradeStep;
+    FP Value;
+    FP DefaultValue;
+    FP Chance;
+    [HideInInspector] Boolean LimitMaxLevel;
+    [Optional("LimitMaxLevel")] Int32 MaxLevel;
+}

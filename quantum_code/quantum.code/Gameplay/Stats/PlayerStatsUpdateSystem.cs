@@ -1,4 +1,6 @@
-﻿namespace Quantum.Gameplay.Stats;
+﻿using Quantum.Collections;
+
+namespace Quantum.Gameplay.Stats;
 
 public unsafe class PlayerStatsUpdateSystem : SystemMainThreadFilter<PlayerStatsUpdateSystem.Filter>, ISignalOnPlayerSpawn {
     
@@ -27,8 +29,9 @@ public unsafe class PlayerStatsUpdateSystem : SystemMainThreadFilter<PlayerStats
             return;
         }
 
-        movement->Speed = stats->MovementSpeed.DefaultValue;
-        attacker->Stats.Damage = stats->AttackDamage.DefaultValue.AsInt;
-        attacker->Stats.Range = stats->AttackRange.DefaultValue;
+        QEnumDictionary<StatType,Stat> values = frame.ResolveDictionary(stats->Values);
+        movement->Speed = values[StatType.MovementSpeed].DefaultValue;
+        attacker->Stats.Damage = values[StatType.AttackDamage].DefaultValue.AsInt;
+        attacker->Stats.Range = values[StatType.AttackRange].DefaultValue.AsInt;
     }
 }

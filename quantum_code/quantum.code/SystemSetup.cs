@@ -5,6 +5,9 @@ using Quantum.Gameplay.Damage;
 using Quantum.Gameplay.Death;
 using Quantum.Gameplay.EnemiesSpawner;
 using Quantum.Gameplay.PlayerMovement;
+using Quantum.Gameplay.Stats;
+using Quantum.Gameplay.Upgrade;
+using Quantum.Gameplay.UpgradeCommand;
 
 namespace Quantum {
   public static class SystemSetup {
@@ -27,10 +30,13 @@ namespace Quantum {
         new PlayerSpawnSystem(),
         new MovementSystem(),
         new PlayerMovementSystem(),
+        new PlayerStatsUpdateSystem(),
         new EnemySpawnerSystem(),
         new CombatSystem(),
         new DeathSystem(),
-        new DamageSystem()
+        new DamageSystem(),
+        new UpgradeCommandSystem(),
+        new UpgradeSystem()
       ];
     }
   }

@@ -90,9 +90,11 @@
     <Compile Include="Gameplay\Input\Input.cs" />
     <Compile Include="Gameplay\PlayerMovement\PlayerMovementSystem.cs" />
     <Compile Include="Gameplay\BasePlayer\PlayerSpawnSystem.cs" />
+    <Compile Include="Gameplay\Stats\PlayerStats.cs" />
     <Compile Include="Gameplay\Stats\PlayerStatsUpdateSystem.cs" />
-    <Compile Include="Gameplay\UpgradeCommandSystem\UpgradeCommand.cs" />
-    <Compile Include="Gameplay\UpgradeCommandSystem\UpgradeCommandSystem.cs" />
+    <Compile Include="Gameplay\UpgradeCommand\UpgradeCommand.cs" />
+    <Compile Include="Gameplay\UpgradeCommand\UpgradeCommandSystem.cs" />
+    <Compile Include="Gameplay\Upgrade\UpgradeSystem.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
     <Compile Include="RuntimePlayer.User.cs" />
     <Compile Include="SimulationConfig.User.cs" />
@@ -114,7 +116,8 @@
     <Content Include="Gameplay\Health\Health.qtn" />
     <Content Include="Gameplay\Input\PlayerInput.qtn" />
     <Content Include="Gameplay\BasePlayer\Player.qtn" />
-    <Content Include="Gameplay\Stats\HeroStats.qtn" />
+    <Content Include="Gameplay\Stats\PlayerStats.qtn" />
+    <Content Include="Gameplay\UpgradeCommand\PlayerUpgradeCommandSignal.qtn" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

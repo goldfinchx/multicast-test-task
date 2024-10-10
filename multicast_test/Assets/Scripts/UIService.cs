@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Quantum.Gameplay.UpgradeCommand;
 using UnityEngine;
 
 public class UIService : MonoBehaviour {
-    
-    
-    
-    private void Awake() {
-        throw new NotImplementedException();
+
+
+    public void SendUpgradeCommand() {
+        QuantumRunner.Default.Game.SendCommand(new UpgradeCommand());
     }
     
     
