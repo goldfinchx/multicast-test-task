@@ -23,4 +23,5 @@ public partial struct Input {
             EncodedMovement = (byte) angle.AsInt;
         }
     }
+    
 }

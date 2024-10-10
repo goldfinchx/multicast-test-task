@@ -1,0 +1,4 @@
+component Rotation {
+    FPQuaternion Target;
+    FP Speed;
+}

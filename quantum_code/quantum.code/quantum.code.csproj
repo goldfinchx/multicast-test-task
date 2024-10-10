@@ -83,6 +83,7 @@
     <Compile Include="FrameContext.User.cs" />
     <Compile Include="Gameplay\BaseMovement\Movement.cs" />
     <Compile Include="Gameplay\BaseMovement\MovementSystem.cs" />
+    <Compile Include="Gameplay\BaseRotation\RotationSystem.cs" />
     <Compile Include="Gameplay\Combat\CombatSystem.cs" />
     <Compile Include="Gameplay\Commands\CommandsSystem.cs" />
     <Compile Include="Gameplay\Damage\DamageSystem.cs" />
@@ -111,6 +112,7 @@
     <EmbeddedResource Include="db.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Gameplay\BaseRotation\Rotation.qtn" />
     <Content Include="Gameplay\Damage\DamageEvent.qtn" />
     <Content Include="Gameplay\PlayerSetup\PlayerSpawnSignal.qtn" />
     <Content Include="Gameplay\Combat\Attacker.qtn" />
@@ -129,6 +131,9 @@
     <Content Include="Gameplay\Stats\PlayerStats.qtn" />
     <Content Include="Gameplay\UICommand\UISetupCommandSignal.qtn" />
     <Content Include="Gameplay\UpgradeCommand\UpgradeCommandSignal.qtn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gameplay\PlayerRotation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
