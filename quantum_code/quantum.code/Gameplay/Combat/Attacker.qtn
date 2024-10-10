@@ -1,7 +1,7 @@
 component Attacker {
     AttackerStats Stats;
     AttackerType Type;
-    FP LastAttackTime;
+    [HideInInspector] FP LastAttackTime;
 }
 
 struct AttackerStats {

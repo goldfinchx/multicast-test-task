@@ -1,4 +1,4 @@
 ﻿component Movement {
    [HideInInspector] FPVector3 Target;
-   [HideInInspector] FP Speed;
+   FP Speed;
 }

@@ -81,6 +81,7 @@
     <Compile Include="Extensions\Frame.cs" />
     <Compile Include="Frame.User.cs" />
     <Compile Include="FrameContext.User.cs" />
+    <Compile Include="Gameplay\BaseMovement\Movement.cs" />
     <Compile Include="Gameplay\BaseMovement\MovementSystem.cs" />
     <Compile Include="Gameplay\Combat\CombatSystem.cs" />
     <Compile Include="Gameplay\Commands\CommandsSystem.cs" />
@@ -110,18 +111,19 @@
     <EmbeddedResource Include="db.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Gameplay\Damage\DamageEvent.qtn" />
     <Content Include="Gameplay\PlayerSetup\PlayerSpawnSignal.qtn" />
     <Content Include="Gameplay\Combat\Attacker.qtn" />
     <Content Include="Gameplay\BaseMovement\Movement.qtn" />
     <Content Include="Gameplay\Combat\OnAttackSignal.qtn" />
-    <Content Include="Gameplay\Damage\OnDamageSignal.qtn" />
+    <Content Include="Gameplay\Damage\DamageSignal.qtn" />
     <Content Include="Gameplay\Death\EntityDeathSignal.qtn" />
     <Content Include="Gameplay\EnemiesSpawner\EnemySpawnerConfig.qtn" />
     <Content Include="Gameplay\Enemies\EnemyMarker.qtn" />
-    <Content Include="Gameplay\Events\StatUpdateEvent.qtn" />
     <Content Include="Gameplay\Health\Health.qtn" />
     <Content Include="Gameplay\Input\PlayerInput.qtn" />
     <Content Include="Gameplay\PlayerSetup\Player.qtn" />
+    <Content Include="Gameplay\StatsUpdate\StatUpdateEvent.qtn" />
     <Content Include="Gameplay\StatsUpdate\StatUpdateSignal.qtn" />
     <Content Include="Gameplay\StatsUpgrade\StatUpgradeSignal.qtn" />
     <Content Include="Gameplay\Stats\PlayerStats.qtn" />

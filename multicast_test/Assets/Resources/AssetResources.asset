@@ -41,21 +41,21 @@ MonoBehaviour:
         Id:
           Value: 5
       ResourcePath: DB/Configs/SimulationConfig
-    - Path: Resources/DB/Players/Hero|EntityPrototype
+    - Path: Resources/DB/Players/Player|EntityPrototype
       AssetRef:
         Id:
           Value: 247827484427304855
-      ResourcePath: DB/Players/Hero
+      ResourcePath: DB/Players/Player
     - Path: Resources/DB/Enemies/Easy Enemy|EntityView
       AssetRef:
         Id:
           Value: 841351352780042196
       ResourcePath: DB/Enemies/Easy Enemy
-    - Path: Resources/DB/Players/Hero|EntityView
+    - Path: Resources/DB/Players/Player|EntityView
       AssetRef:
         Id:
           Value: 1444052824313676437
-      ResourcePath: DB/Players/Hero
+      ResourcePath: DB/Players/Player
     - Path: Resources/DB/Map1
       AssetRef:
         Id:

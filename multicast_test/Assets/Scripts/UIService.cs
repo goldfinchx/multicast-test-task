@@ -41,7 +41,7 @@ public class UIService : MonoBehaviour {
     private void Awake() {
         UpdateSubject = new Subject<EventStatUpdate>();
         QuantumEvent.Subscribe<EventStatUpdate>(listener: this, handler: HandleUpdateEvent); 
-        Invoke(nameof(CreateStatsVisuals), 2);
+        Invoke(nameof(CreateStatsVisuals), 0.1f);
     }
 
     private void Update() {

@@ -11,12 +11,8 @@ public unsafe class MovementSystem : SystemMainThreadFilter<MovementSystem.Filte
     }
     
     public override void Update(Frame frame, ref Filter filter) {
-        FPVector3 newPosition = CalculateNewPosition(filter.Transform->Position, filter.Movement->Target, filter.Movement->Speed);
-        filter.Transform->Position = newPosition;
-    }
-
-    private FPVector3 CalculateNewPosition(FPVector3 transformPosition, FPVector3 movementTarget, FP movementSpeed) {
-        return FPVector3.Lerp(transformPosition, movementTarget, movementSpeed);
+        FP interpolation = frame.DeltaTime * filter.Movement->AdjustedSpeed;
+        filter.Transform->Position = FPVector3.Lerp(filter.Transform->Position, filter.Movement->Target, interpolation);
     }
     
 }

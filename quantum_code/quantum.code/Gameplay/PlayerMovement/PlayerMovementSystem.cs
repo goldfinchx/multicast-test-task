@@ -19,16 +19,13 @@ public unsafe class PlayerMovementSystem : SystemMainThreadFilter<PlayerMovement
             return;
         }
         
-        FPVector3 newPosition = CalculateNewPosition(filter.Transform->Position, movementInput, filter.Movement->Speed);
-        filter.Movement->Target = newPosition;
+        FPVector3 movement = movementInput.XOY * filter.Movement->Speed;
+        filter.Movement->Target = filter.Transform->Position + movement;
     }
     
     private Input GetInput(Frame frame, EntityRef entity) {
         Player* player = frame.Unsafe.GetPointer<Player>(entity);
         return *frame.GetPlayerInput(player->Reference);
     }
-
-    private FPVector3 CalculateNewPosition(FPVector3 currentPosition, FPVector2 movementInput, FP speed) {
-        return currentPosition + movementInput.XOY * speed;
-    }
+    
 }
