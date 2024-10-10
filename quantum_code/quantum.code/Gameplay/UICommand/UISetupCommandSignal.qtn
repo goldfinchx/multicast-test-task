@@ -1,0 +1,1 @@
+signal OnUISetupCommand(int player);

@@ -14,12 +14,12 @@ public unsafe class StatsUpgradeSystem : SystemSignalsOnly, ISignalOnUpgradeComm
             return;
         }
 
-        Stat randomizedStat = playerStats->GetRandomStat(frame);
-        if (randomizedStat.Equals(Stat.None)) {
+        Stat* randomizedStat = playerStats->GetRandomStat(frame);
+        if (randomizedStat is null) {
             return;
         }
         
-        randomizedStat.Upgrade();
-        frame.Signals.OnStatUpgrade(playerEntity, randomizedStat);
+        randomizedStat->Upgrade();
+        frame.Signals.OnStatUpgrade(playerEntity, *randomizedStat);
     }
 }

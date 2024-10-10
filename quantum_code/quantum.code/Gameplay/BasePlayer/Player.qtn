@@ -1,3 +1,0 @@
-component Player {
-    player_ref Reference;
-}

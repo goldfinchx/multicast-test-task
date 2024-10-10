@@ -73,7 +73,6 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
     private HitCollection3D QueryEntitiesAround(Frame frame, FPVector3 center, FP radius) {
         Shape3D castShape = Shape3D.CreateSphere(radius);
         HitCollection3D queryEntitiesAround = frame.Physics3D.OverlapShape(center, FPQuaternion.Identity, castShape);
-        Log.Debug("QueryEntitiesAround count=" + queryEntitiesAround.Count);
         return queryEntitiesAround;
     }
 }

@@ -10,12 +10,12 @@ enum StatType {
 
 struct Stat {
     StatType Type;
-    Int32 Level;
-    FP UpgradeStep;
-    FP Value;
     FP DefaultValue;
-    FP Chance;
-    [HideInInspector] Boolean LimitMaxLevel;
-    [Optional("LimitMaxLevel")] Int32 MaxLevel;
+    FP UpgradeStep;
+    [Range(0, 100)] Int32 Chance;
+    [HideInInspector] FP Value;
+    [HideInInspector] Int32 Level;
+    [HideInInspector] Boolean LimitLevelFlag;
+    [Optional("LimitLevelFlag")] Int32 LimitLevel;
 
 }
