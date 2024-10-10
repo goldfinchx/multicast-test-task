@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(EntityView), typeof(MeshRenderer))]
 public class EnemyDamageAnimator : MonoBehaviour {
 
+    [SerializeField] private float damageEffectDuration = 0.1f;
+    
     private EntityView entityView;
     private MeshRenderer meshRenderer;
     private Color defaultColor;
@@ -26,7 +28,7 @@ public class EnemyDamageAnimator : MonoBehaviour {
     
     private IEnumerator ShowDamageEffect() {
         meshRenderer.material.color = Color.red;
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(damageEffectDuration);
         meshRenderer.material.color = defaultColor;
     }
     
