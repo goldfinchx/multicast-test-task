@@ -4,9 +4,10 @@ using Quantum.Gameplay.Combat;
 using Quantum.Gameplay.Damage;
 using Quantum.Gameplay.Death;
 using Quantum.Gameplay.EnemiesSpawner;
+using Quantum.Gameplay.Health;
 using Quantum.Gameplay.PlayerMovement;
-using Quantum.Gameplay.Stats;
-using Quantum.Gameplay.Upgrade;
+using Quantum.Gameplay.StatsSync;
+using Quantum.Gameplay.StatsUpgrade;
 using Quantum.Gameplay.UpgradeCommand;
 
 namespace Quantum {
@@ -30,13 +31,14 @@ namespace Quantum {
         new PlayerSpawnSystem(),
         new MovementSystem(),
         new PlayerMovementSystem(),
-        new PlayerStatsUpdateSystem(),
+        new StatsSyncWithComponentsSystem(),
         new EnemySpawnerSystem(),
-        new CombatSystem(),
-        new DeathSystem(),
         new DamageSystem(),
+        new CombatSystem(),
+        new HealthSetSystem(),
+        new DeathSystem(),
         new UpgradeCommandSystem(),
-        new UpgradeSystem()
+        new StatsUpgradeSystem()
       ];
     }
   }

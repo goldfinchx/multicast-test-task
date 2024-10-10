@@ -1,5 +1,5 @@
 component PlayerStats {
-   dictionary<StatType, Stat> Values;
+   list<Stat> Values;
 }
 
 enum StatType {
@@ -9,6 +9,7 @@ enum StatType {
 }
 
 struct Stat {
+    StatType Type;
     Int32 Level;
     FP UpgradeStep;
     FP Value;
@@ -16,4 +17,5 @@ struct Stat {
     FP Chance;
     [HideInInspector] Boolean LimitMaxLevel;
     [Optional("LimitMaxLevel")] Int32 MaxLevel;
+
 }

@@ -87,14 +87,16 @@
     <Compile Include="Gameplay\Death\DeathSystem.cs" />
     <Compile Include="Gameplay\EnemiesSpawner\EnemySpawnerConfig.cs" />
     <Compile Include="Gameplay\EnemiesSpawner\EnemySpawnerSystem.cs" />
+    <Compile Include="Gameplay\Health\HealthSetSystem.cs" />
     <Compile Include="Gameplay\Input\Input.cs" />
     <Compile Include="Gameplay\PlayerMovement\PlayerMovementSystem.cs" />
     <Compile Include="Gameplay\BasePlayer\PlayerSpawnSystem.cs" />
+    <Compile Include="Gameplay\StatsSync\StatsSyncWithComponentsSystem.cs" />
     <Compile Include="Gameplay\Stats\PlayerStats.cs" />
-    <Compile Include="Gameplay\Stats\PlayerStatsUpdateSystem.cs" />
+    <Compile Include="Gameplay\Stats\Stat.cs" />
     <Compile Include="Gameplay\UpgradeCommand\UpgradeCommand.cs" />
     <Compile Include="Gameplay\UpgradeCommand\UpgradeCommandSystem.cs" />
-    <Compile Include="Gameplay\Upgrade\UpgradeSystem.cs" />
+    <Compile Include="Gameplay\StatsUpgrade\StatsUpgradeSystem.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
     <Compile Include="RuntimePlayer.User.cs" />
     <Compile Include="SimulationConfig.User.cs" />
@@ -116,6 +118,7 @@
     <Content Include="Gameplay\Health\Health.qtn" />
     <Content Include="Gameplay\Input\PlayerInput.qtn" />
     <Content Include="Gameplay\BasePlayer\Player.qtn" />
+    <Content Include="Gameplay\StatsUpgrade\StatUpgradeSignal.qtn" />
     <Content Include="Gameplay\Stats\PlayerStats.qtn" />
     <Content Include="Gameplay\UpgradeCommand\PlayerUpgradeCommandSignal.qtn" />
   </ItemGroup>

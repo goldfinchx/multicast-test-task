@@ -2,7 +2,7 @@
 
 public class DeathSystem : SystemSignalsOnly, ISignalOnDamage {
     public void OnDamage(Frame frame, EntityRef victim, EntityRef attacker, int damage) {
-        if (!frame.TryGet(victim, out Health health)) {
+        if (!frame.TryGet(victim, out Quantum.Health health)) {
             Log.Warn("Damaged entity does not have health component!");
             return;
         }

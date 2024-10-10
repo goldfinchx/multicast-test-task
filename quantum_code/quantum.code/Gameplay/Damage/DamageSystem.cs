@@ -7,7 +7,7 @@ namespace Quantum.Gameplay.Damage;
 public unsafe class DamageSystem : SystemSignalsOnly, ISignalOnAttack {
     
     public void OnAttack(Frame frame, EntityRef victim, EntityRef attacker, int damage) {
-        if (!frame.Unsafe.TryGetPointer(victim, out Health* health)) {
+        if (!frame.Unsafe.TryGetPointer(victim, out Quantum.Health* health)) {
             Log.Warn("Damaged entity does not have health component!");
             return;
         }

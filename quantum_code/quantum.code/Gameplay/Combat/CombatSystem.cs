@@ -46,7 +46,7 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
 
             Hit3D hit = hits[i];
             EntityRef entity = hit.Entity;
-            if (!frame.Has<Health>(entity)) {
+            if (!frame.Has<Quantum.Health>(entity)) {
                 continue;
             }
 
