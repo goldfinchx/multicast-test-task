@@ -30,12 +30,10 @@ public class UIStatVisualization : MonoBehaviour {
     }
 
     private void UpdateStat(Stat stat) {
-        Debug.Log($"Pre-Update stat: name={GetStatTitle(stat.Type)} level={stat.Level} value={stat.Value} chance={stat.Chance}");
         title.text = GetStatTitle(stat.Type);
         level.text = stat.Level.ToString();
         value.text = stat.Value.ToString();
         chance.text = stat.Chance + "%";
-        Debug.Log($"Post-Update stat: name={GetStatTitle(stat.Type)} level={stat.Level} value={stat.Value} chance={stat.Chance}");
     }
 
     private string GetStatTitle(StatType statType) {

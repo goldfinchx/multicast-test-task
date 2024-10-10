@@ -36,7 +36,7 @@ public unsafe class StatsUpdateSystem : SystemSignalsOnly, ISignalOnStatUpgrade,
         FP statValue = stat.Level == 1 ? stat.DefaultValue : stat.Value;
         switch (stat.Type) {
             case StatType.AttackDamage:
-                attacker->Stats.Damage = statValue.AsInt;
+                attacker->Stats.DamagePerSecond = statValue;
                 break;
             case StatType.AttackRange:
                 attacker->Stats.Range = statValue;

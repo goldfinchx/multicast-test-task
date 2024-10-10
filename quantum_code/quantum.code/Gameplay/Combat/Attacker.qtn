@@ -1,13 +1,12 @@
 component Attacker {
     AttackerStats Stats;
     AttackerType Type;
-    [HideInInspector] FP LastAttackTime;
 }
 
 struct AttackerStats {
     FP Range;
     FP Cooldown;
-    Int32 Damage;
+    FP DamagePerSecond;
     Int32 ConcurrentAttacks;
 }
 

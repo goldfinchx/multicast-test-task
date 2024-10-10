@@ -23,7 +23,7 @@ public class StatsSetupSystem : SystemSignalsOnly, ISignalOnComponentAdded<Playe
         }
 
         movement->Speed = component->GetMovementSpeed(frame).DefaultValue;
-        attacker->Stats.Damage = component->GetAttackDamage(frame).DefaultValue.AsInt;
+        attacker->Stats.DamagePerSecond = component->GetAttackDamage(frame).DefaultValue;
         attacker->Stats.Range = component->GetAttackRange(frame).DefaultValue;
     }
 }

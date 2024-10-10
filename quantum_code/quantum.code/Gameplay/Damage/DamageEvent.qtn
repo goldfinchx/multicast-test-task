@@ -1,5 +1,5 @@
 event Damage {
     entity_ref Victim;
     entity_ref Attacker;
-    Int32 Damage;
+    FP Damage;
 }

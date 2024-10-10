@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Quantum;
 using UnityEngine;
 
@@ -8,10 +7,12 @@ public class EnemyDamageAnimator : MonoBehaviour {
 
     private EntityView entityView;
     private MeshRenderer meshRenderer;
+    private Color defaultColor;
 
     private void Awake() {
         entityView = GetComponent<EntityView>();
         meshRenderer = GetComponent<MeshRenderer>();
+        defaultColor = meshRenderer.material.color;
         QuantumEvent.Subscribe<EventDamage>(listener: this, handler: HandleDamageEvent);
     }
 
@@ -24,9 +25,8 @@ public class EnemyDamageAnimator : MonoBehaviour {
     }
     
     private IEnumerator ShowDamageEffect() {
-        Color defaultColor = meshRenderer.material.color;
         meshRenderer.material.color = Color.red;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.01f);
         meshRenderer.material.color = defaultColor;
     }
     

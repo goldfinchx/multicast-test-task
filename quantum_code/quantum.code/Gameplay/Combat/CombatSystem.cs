@@ -12,10 +12,6 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
     }
 
     public override void Update(Frame frame, ref Filter filter) {
-        if (IsInCooldown(frame, filter.Attacker)) {
-            return;
-        }
-        
         HitCollection3D hits = QueryEntitiesAround(frame, filter.Transform->Position, filter.Attacker->Stats.Range);
         if (hits.Count == 0) {
             return;
@@ -26,12 +22,12 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
             return;
         }
         
+        FP damage = filter.Attacker->Stats.DamagePerSecond * frame.DeltaTime;
         for (int i = 0; i < sortedHits->Count; i++) {
             Hit3D* hit = &sortedHits->HitsBuffer[i];
-            frame.Signals.OnAttack(hit->Entity, filter.Entity, filter.Attacker->Stats.Damage);
+            frame.Signals.OnAttack(hit->Entity, filter.Entity, damage);
         }
         
-        filter.Attacker->LastAttackTime = frame.ElapsedTime;
         frame.Physics3D.FreePersistentHitCollection3D(sortedHits);
     }
 
@@ -65,11 +61,7 @@ public unsafe class CombatSystem : SystemMainThreadFilter<CombatSystem.Filter> {
 
         return sortedHits;
     }
-
-    private bool IsInCooldown(Frame frame, Attacker* attacker) {
-        return frame.ElapsedTime < attacker->LastAttackTime + attacker->Stats.Cooldown;
-    }
-
+    
     private HitCollection3D QueryEntitiesAround(Frame frame, FPVector3 center, FP radius) {
         Shape3D castShape = Shape3D.CreateSphere(radius);
         HitCollection3D queryEntitiesAround = frame.Physics3D.OverlapShape(center, FPQuaternion.Identity, castShape);

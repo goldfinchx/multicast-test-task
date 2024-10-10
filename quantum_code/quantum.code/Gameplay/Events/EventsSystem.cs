@@ -1,4 +1,6 @@
-﻿namespace Quantum.Gameplay.Events;
+﻿using Photon.Deterministic;
+
+namespace Quantum.Gameplay.Events;
 
 public class EventsSystem : SystemSignalsOnly, ISignalOnStatUpdate, ISignalOnDamage {
     
@@ -6,7 +8,7 @@ public class EventsSystem : SystemSignalsOnly, ISignalOnStatUpdate, ISignalOnDam
         frame.Events.StatUpdate(stat);
     }
 
-    public void OnDamage(Frame frame, EntityRef victim, EntityRef attacker, int damage) {
+    public void OnDamage(Frame frame, EntityRef victim, EntityRef attacker, FP damage) {
         frame.Events.Damage(victim, attacker, damage);
     }
 }

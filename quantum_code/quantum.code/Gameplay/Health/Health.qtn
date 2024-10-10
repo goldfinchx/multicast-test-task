@@ -1,4 +1,4 @@
 component Health {
     Int32 MaxValue;
-    [HideInInspector] Int32 Value;
+    [HideInInspector] FP Value;
 }
