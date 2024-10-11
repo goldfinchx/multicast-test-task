@@ -34,9 +34,9 @@ namespace Quantum {
         new Core.PlayerConnectedSystem(),
 
         // user systems go here
-        new PlayerSpawnSystem(),
         new EventsSystem(),
         new CommandsSystem(),
+        new PlayerSpawnSystem(),
         new StatsSetupSystem(),
         new StatsUpdateSystem(),
         new StatsUpgradeSystem(),

@@ -348,46 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prototype:
-    Values:
-    - Type:
-        Value: 2
-      DefaultValue:
-        RawValue: 65536
-      UpgradeStep:
-        RawValue: 32768
-      Chance: 60
-      Value:
-        RawValue: 65536
-      Level: 0
-      LimitLevelFlag:
-        Value: 0
-      LimitLevel: 0
-    - Type:
-        Value: 0
-      DefaultValue:
-        RawValue: 655360
-      UpgradeStep:
-        RawValue: 655360
-      Chance: 30
-      Value:
-        RawValue: 655360
-      Level: 1
-      LimitLevelFlag:
-        Value: 0
-      LimitLevel: 0
-    - Type:
-        Value: 1
-      DefaultValue:
-        RawValue: 131072
-      UpgradeStep:
-        RawValue: 65536
-      Chance: 10
-      Value:
-        RawValue: 131072
-      Level: 0
-      LimitLevelFlag:
-        Value: 0
-      LimitLevel: 0
+    Values: []
 --- !u!114 &6713151039651243494
 MonoBehaviour:
   m_ObjectHideFlags: 0

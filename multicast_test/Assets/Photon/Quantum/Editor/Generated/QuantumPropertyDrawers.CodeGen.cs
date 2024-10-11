@@ -15,6 +15,13 @@ namespace Quantum.Editor {
     }
   }
 
+  [CustomPropertyDrawer(typeof(AssetRefHeroStatsConfig))]
+  public class AssetRefHeroStatsConfigPropertyDrawer : PropertyDrawer {
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+      AssetRefDrawer.DrawAssetRefSelector(position, property, label, typeof(HeroStatsConfigAsset));
+    }
+  }
+
   [CustomPropertyDrawer(typeof(Quantum.Prototypes.AttackerType_Prototype))]
   [CustomPropertyDrawer(typeof(Quantum.Prototypes.StatType_Prototype))]
   [CustomPropertyDrawer(typeof(Quantum.Prototypes.InputButtons_Prototype))]

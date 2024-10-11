@@ -34,6 +34,7 @@ namespace Quantum.Editor {
       public Quantum.EnemySpawnerConfig[] EnemySpawnerConfig = {};
       public Quantum.EntityPrototype[] EntityPrototype = {};
       public Quantum.EntityView[] EntityView = {};
+      public Quantum.HeroStatsConfig[] HeroStatsConfig = {};
       public Quantum.Map[] Map = {};
       public Quantum.NavMesh[] NavMesh = {};
       public Quantum.NavMeshAgentConfig[] NavMeshAgentConfig = {};

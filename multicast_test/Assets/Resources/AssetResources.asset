@@ -76,3 +76,8 @@ MonoBehaviour:
         Id:
           Value: 3349904209301087452
       ResourcePath: DB/Enemies/Easy Enemy
+    - Path: Resources/DB/Configs/Default Hero Stats Config
+      AssetRef:
+        Id:
+          Value: 3706211193629588597
+      ResourcePath: DB/Configs/Default Hero Stats Config

@@ -100,6 +100,7 @@
     <Compile Include="Gameplay\StatsCommands\StatSetupCommand.cs" />
     <Compile Include="Gameplay\PlayerSetup\PlayerSpawnSystem.cs" />
     <Compile Include="Gameplay\StatsUpdate\StatsUpdateSystem.cs" />
+    <Compile Include="Gameplay\Stats\HeroStatsConfig.cs" />
     <Compile Include="Gameplay\Stats\PlayerStats.cs" />
     <Compile Include="Gameplay\Stats\Stat.cs" />
     <Compile Include="Gameplay\UpgradeCommand\UpgradeCommand.cs" />
@@ -134,6 +135,7 @@
     <Content Include="Gameplay\StatsUpdate\StatUpdateEvent.qtn" />
     <Content Include="Gameplay\StatsUpdate\StatUpdateSignal.qtn" />
     <Content Include="Gameplay\StatsUpgrade\StatUpgradeSignal.qtn" />
+    <Content Include="Gameplay\Stats\HeroStatsConfig.qtn" />
     <Content Include="Gameplay\Stats\PlayerStats.qtn" />
     <Content Include="Gameplay\StatsCommands\UISetupCommandSignal.qtn" />
     <Content Include="Gameplay\UpgradeCommand\UpgradeCommandSignal.qtn" />

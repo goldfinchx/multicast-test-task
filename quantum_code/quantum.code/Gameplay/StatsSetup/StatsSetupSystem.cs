@@ -2,27 +2,30 @@
 
 namespace Quantum.Gameplay.StatsSetup;
 
-public class StatsSetupSystem : SystemSignalsOnly, ISignalOnComponentAdded<PlayerStats> {
-    
-    public unsafe void OnAdded(Frame frame, EntityRef entity, PlayerStats* component) {
-        if (!frame.Unsafe.TryGetPointer(entity, out Movement* movement)) {
-            Log.Error("Movement component not found on Player entity!");
+public unsafe class StatsSetupSystem : SystemSignalsOnly, ISignalOnPlayerSpawn {
+
+    public void OnPlayerSpawn(Frame frame, EntityRef player) {
+        if (!frame.Unsafe.TryGetPointer(player, out PlayerStats* statsComponent)) {
+            Log.Error("Player component not found on Player entity!");
             return;
         }
         
-        if (!frame.Unsafe.TryGetPointer(entity, out Attacker* attacker)) {
-            Log.Error("Attacker component not found on Player entity!");
+        if (!frame.Unsafe.TryGetPointer(player, out Movement* movement)) {
+            Log.Error("Movement component not found on Player entity!");
             return;
         }
 
-        QList<Stat> stats = frame.ResolveList(component->Values);
-        for (int i = 0; i < stats.Count; i++) {
-            Stat* stat = stats.GetPointer(i);
-            stat->Level = 1;
+        if (!frame.Unsafe.TryGetPointer(player, out Attacker* attacker)) {
+            Log.Error("Attacker component not found on Player entity!");
+            return;
         }
-
-        movement->Speed = component->GetMovementSpeed(frame).DefaultValue;
-        attacker->Stats.DamagePerSecond = component->GetAttackDamage(frame).DefaultValue;
-        attacker->Stats.Range = component->GetAttackRange(frame).DefaultValue;
+        
+        HeroStatsConfig defaultHeroStats = frame.FindAsset<HeroStatsConfig>(frame.RuntimeConfig.DefaultHeroStats);
+        QList<Stat> stats = defaultHeroStats.GetStats(frame);
+        statsComponent->Values = stats;
+        
+        movement->Speed = defaultHeroStats.MovementSpeed.DefaultValue;
+        attacker->Stats.DamagePerSecond = defaultHeroStats.AttackDamage.DefaultValue;
+        attacker->Stats.Range = defaultHeroStats.AttackRange.DefaultValue;
     }
 }

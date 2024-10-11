@@ -2,6 +2,7 @@
 
 namespace Quantum;
 
+[Serializable]
 public partial struct Stat : IEquatable<Stat> {
     
     public void Upgrade(int levels = 1) {
