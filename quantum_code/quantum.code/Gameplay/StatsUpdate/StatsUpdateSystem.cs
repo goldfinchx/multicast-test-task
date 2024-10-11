@@ -1,25 +1,14 @@
 ﻿using System;
+using System.Linq;
 using Photon.Deterministic;
 using Quantum.Collections;
 
 namespace Quantum.Gameplay.StatsUpdate;
 
-public unsafe class StatsUpdateSystem : SystemSignalsOnly, ISignalOnStatUpgrade, ISignalOnUISetupCommand {
+public unsafe class StatsUpdateSystem : SystemSignalsOnly, ISignalOnStatUpgrade, ISignalOnStatSetupCommand {
 
     public void OnStatUpgrade(Frame frame, EntityRef playerEntity, Stat stat) {
         UpdateStat(frame, playerEntity, stat);
-    }
-    
-    private void UpdateAllStats(Frame frame, EntityRef playerEntity) {
-        if (!frame.Unsafe.TryGetPointer(playerEntity, out PlayerStats* statsComponent)) {
-            Log.Error("PlayerStats component not found on Player entity!");
-            return;
-        }
-
-        QList<Stat> stats = frame.ResolveList(statsComponent->Values);
-        foreach (Stat stat in stats) {
-            UpdateStat(frame, playerEntity, stat);
-        }
     }
     
     private void UpdateStat(Frame frame, EntityRef playerEntity, Stat stat) {
@@ -51,12 +40,21 @@ public unsafe class StatsUpdateSystem : SystemSignalsOnly, ISignalOnStatUpgrade,
         frame.Signals.OnStatUpdate(playerEntity, stat);
     }
 
-    public void OnUISetupCommand(Frame frame, int player) {
+
+    public void OnStatSetupCommand(Frame frame, int player, int typeIndex) {
         if (!frame.TryGetPlayerEntity(player, out EntityRef playerEntity)) {
             Log.Error("Player entity not found!");
             return;
         }
-        
-        UpdateAllStats(frame, playerEntity);
+
+        if (!frame.Unsafe.TryGetPointer(playerEntity, out PlayerStats* statsComponent)) {
+            Log.Error("PlayerStats component not found on Player entity!");
+            return;
+        }
+
+        QList<Stat> stats = frame.ResolveList(statsComponent->Values);
+        StatType statType = (StatType) typeIndex;
+        Stat stat = stats.FirstOrDefault(x => x.Type == statType);
+        UpdateStat(frame, playerEntity, stat);
     }
 }

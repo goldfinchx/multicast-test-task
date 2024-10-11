@@ -9,8 +9,7 @@ public unsafe partial struct PlayerStats {
     public Stat* GetRandomStat(Frame frame) {
         QList<Stat> resolvedStats = frame.ResolveList(Values);
         int value = frame.Global->RngSession.Next(FP._1, FP._100).AsInt;
-        Log.Info($"Random value: {value}");
-        
+
         Stat* result = null;
         for (int i = 0; i < resolvedStats.Count; i++) {
             Stat* stat = resolvedStats.GetPointer(i);

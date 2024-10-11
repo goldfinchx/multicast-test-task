@@ -19,11 +19,5 @@ namespace Gameplay {
             EventsSubject.Dispose();
         }
 
-
-        // todo move to each stat separtely
-       // QuantumRunner.Default.Game.SendCommand(new UISetupCommand());
-        
-
-
     }
 }

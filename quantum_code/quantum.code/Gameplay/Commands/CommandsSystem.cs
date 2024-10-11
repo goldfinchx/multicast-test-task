@@ -1,5 +1,5 @@
 ﻿using Photon.Deterministic;
-using Quantum.Gameplay.UICommand;
+using Quantum.Gameplay.StatsCommands;
 
 namespace Quantum.Gameplay.Commands;
 
@@ -11,8 +11,8 @@ public class CommandsSystem : SystemMainThread {
                 case UpgradeCommand.UpgradeCommand:
                     frame.Signals.OnUpgradeCommand(i);
                     continue;
-                case UISetupCommand:
-                    frame.Signals.OnUISetupCommand(i);
+                case StatSetupCommand setupCommand:
+                    frame.Signals.OnStatSetupCommand(i, setupCommand.StatType);
                     continue;
                 default: continue;
             }

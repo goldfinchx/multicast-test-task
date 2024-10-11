@@ -11,7 +11,7 @@ using Quantum.Gameplay.PlayerMovement;
 using Quantum.Gameplay.PlayerRotation;
 using Quantum.Gameplay.PlayerSetup;
 using Quantum.Gameplay.Statistics;
-using Quantum.Gameplay.Stats;
+using Quantum.Gameplay.StatsSetup;
 using Quantum.Gameplay.StatsUpdate;
 using Quantum.Gameplay.StatsUpgrade;
 using Quantum.Gameplay.UpgradeCommand;

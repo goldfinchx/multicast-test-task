@@ -1,7 +1,6 @@
 ﻿using Quantum.Collections;
-using Quantum.Inspector;
 
-namespace Quantum.Gameplay.Stats;
+namespace Quantum.Gameplay.StatsSetup;
 
 public class StatsSetupSystem : SystemSignalsOnly, ISignalOnComponentAdded<PlayerStats> {
     

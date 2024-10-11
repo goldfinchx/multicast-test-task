@@ -96,12 +96,12 @@
     <Compile Include="Gameplay\PlayerMovement\PlayerMovementSystem.cs" />
     <Compile Include="Gameplay\PlayerRotation\PlayerRotationSystem.cs" />
     <Compile Include="Gameplay\Statistics\StatisticsUpdateSystem.cs" />
-    <Compile Include="Gameplay\StatsSetup\Stat.cs" />
     <Compile Include="Gameplay\StatsSetup\StatsSetupSystem.cs" />
-    <Compile Include="Gameplay\UICommand\UISetupCommand.cs" />
+    <Compile Include="Gameplay\StatsCommands\StatSetupCommand.cs" />
     <Compile Include="Gameplay\PlayerSetup\PlayerSpawnSystem.cs" />
     <Compile Include="Gameplay\StatsUpdate\StatsUpdateSystem.cs" />
     <Compile Include="Gameplay\Stats\PlayerStats.cs" />
+    <Compile Include="Gameplay\Stats\Stat.cs" />
     <Compile Include="Gameplay\UpgradeCommand\UpgradeCommand.cs" />
     <Compile Include="Gameplay\StatsUpgrade\StatsUpgradeSystem.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
@@ -133,7 +133,7 @@
     <Content Include="Gameplay\StatsUpdate\StatUpdateSignal.qtn" />
     <Content Include="Gameplay\StatsUpgrade\StatUpgradeSignal.qtn" />
     <Content Include="Gameplay\Stats\PlayerStats.qtn" />
-    <Content Include="Gameplay\UICommand\UISetupCommandSignal.qtn" />
+    <Content Include="Gameplay\StatsCommands\UISetupCommandSignal.qtn" />
     <Content Include="Gameplay\UpgradeCommand\UpgradeCommandSignal.qtn" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,6 @@
 using System;
 using Quantum;
+using Quantum.Gameplay.StatsCommands;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -21,6 +22,13 @@ namespace Gameplay.UIs {
                 .OfType<object, EventStatUpdate>()
                 .Where(evt => evt.Stat.Type == type)
                 .Subscribe(evt => UpdateStat(evt.Stat));
+            Invoke(nameof(NotifySetup), 0.1f);
+        }
+        
+        private void NotifySetup() {
+            QuantumRunner.Default.Game.SendCommand(new StatSetupCommand {
+                StatType = (int) type
+            });
         }
         
         private void OnDisable() {
