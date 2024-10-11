@@ -10,6 +10,7 @@ using Quantum.Gameplay.Health;
 using Quantum.Gameplay.PlayerMovement;
 using Quantum.Gameplay.PlayerRotation;
 using Quantum.Gameplay.PlayerSetup;
+using Quantum.Gameplay.Statistics;
 using Quantum.Gameplay.Stats;
 using Quantum.Gameplay.StatsUpdate;
 using Quantum.Gameplay.StatsUpgrade;
@@ -47,7 +48,8 @@ namespace Quantum {
         new MovementSystem(),
         new PlayerMovementSystem(),
         new RotationSystem(),
-        new PlayerRotationSystem()
+        new PlayerRotationSystem(),
+        new StatisticsUpdateSystem()
       ];
     }
   }

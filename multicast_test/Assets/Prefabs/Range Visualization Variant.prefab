@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 2592751741141494909, guid: 50f1ed2fe55b1104281f358c317f26b0,
         type: 3}
       propertyPath: m_Name
-      value: Range Visualization
+      value: Range Visualization Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2829374817001985194, guid: 50f1ed2fe55b1104281f358c317f26b0,
         type: 3}
@@ -119,12 +119,12 @@ PrefabInstance:
     - target: {fileID: 5315390074242493716, guid: 50f1ed2fe55b1104281f358c317f26b0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 327
+      value: 535
       objectReference: {fileID: 0}
     - target: {fileID: 5315390074242493716, guid: 50f1ed2fe55b1104281f358c317f26b0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 254
+      value: 301
       objectReference: {fileID: 0}
     - target: {fileID: 5315390074242493716, guid: 50f1ed2fe55b1104281f358c317f26b0,
         type: 3}

@@ -95,12 +95,13 @@
     <Compile Include="Gameplay\Input\Input.cs" />
     <Compile Include="Gameplay\PlayerMovement\PlayerMovementSystem.cs" />
     <Compile Include="Gameplay\PlayerRotation\PlayerRotationSystem.cs" />
+    <Compile Include="Gameplay\Statistics\StatisticsUpdateSystem.cs" />
+    <Compile Include="Gameplay\StatsSetup\Stat.cs" />
+    <Compile Include="Gameplay\StatsSetup\StatsSetupSystem.cs" />
     <Compile Include="Gameplay\UICommand\UISetupCommand.cs" />
     <Compile Include="Gameplay\PlayerSetup\PlayerSpawnSystem.cs" />
     <Compile Include="Gameplay\StatsUpdate\StatsUpdateSystem.cs" />
     <Compile Include="Gameplay\Stats\PlayerStats.cs" />
-    <Compile Include="Gameplay\Stats\Stat.cs" />
-    <Compile Include="Gameplay\Stats\StatsSetupSystem.cs" />
     <Compile Include="Gameplay\UpgradeCommand\UpgradeCommand.cs" />
     <Compile Include="Gameplay\StatsUpgrade\StatsUpgradeSystem.cs" />
     <Compile Include="RuntimeConfig.User.cs" />
@@ -115,6 +116,7 @@
   <ItemGroup>
     <Content Include="Gameplay\BaseRotation\Rotation.qtn" />
     <Content Include="Gameplay\Damage\DamageEvent.qtn" />
+    <Content Include="Gameplay\Death\EnemyDeathEvent.qtn" />
     <Content Include="Gameplay\PlayerSetup\PlayerSpawnSignal.qtn" />
     <Content Include="Gameplay\Combat\Attacker.qtn" />
     <Content Include="Gameplay\BaseMovement\Movement.qtn" />
@@ -126,6 +128,7 @@
     <Content Include="Gameplay\Health\Health.qtn" />
     <Content Include="Gameplay\Input\PlayerInput.qtn" />
     <Content Include="Gameplay\PlayerSetup\Player.qtn" />
+    <Content Include="Gameplay\Statistics\Statistics.qtn" />
     <Content Include="Gameplay\StatsUpdate\StatUpdateEvent.qtn" />
     <Content Include="Gameplay\StatsUpdate\StatUpdateSignal.qtn" />
     <Content Include="Gameplay\StatsUpgrade\StatUpgradeSignal.qtn" />

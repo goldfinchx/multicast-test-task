@@ -1,9 +1,7 @@
-﻿using System.Numerics;
-using Photon.Deterministic;
+﻿using Photon.Deterministic;
 using Quantum;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 
 namespace Gameplay.Input {
