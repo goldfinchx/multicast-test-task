@@ -1,0 +1,4 @@
+event EnemySpawn {
+    EntityRef Enemy; 
+}
+ 

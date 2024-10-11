@@ -2,7 +2,7 @@
 
 namespace Quantum.Gameplay.Events;
 
-public class EventsSystem : SystemSignalsOnly, ISignalOnStatUpdate, ISignalOnDamage, ISignalOnDeath {
+public class EventsSystem : SystemSignalsOnly, ISignalOnStatUpdate, ISignalOnDamage, ISignalOnDeath, ISignalOnEnemySpawn {
     
     public void OnStatUpdate(Frame frame, EntityRef playerEntity, Stat stat) {
         frame.Events.StatUpdate(stat);
@@ -14,5 +14,9 @@ public class EventsSystem : SystemSignalsOnly, ISignalOnStatUpdate, ISignalOnDam
 
     public void OnDeath(Frame frame, EntityRef entity, EntityRef killer) {
         frame.Events.EnemyDeath(entity, killer);
+    }
+
+    public void OnEnemySpawn(Frame frame, EntityRef enemy) {
+        frame.Events.EnemySpawn(enemy);
     }
 }

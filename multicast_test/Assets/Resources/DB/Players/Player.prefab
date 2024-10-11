@@ -409,7 +409,7 @@ MonoBehaviour:
       Z:
         RawValue: 0
     Speed:
-      RawValue: 3342336
+      RawValue: 6553600
 --- !u!114 &627109766574275714
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -73,7 +73,7 @@ MonoBehaviour:
           RawValue: 1638400
       SmoothSphereMeshCollisions: 0
       StaticData:
-        Name: BoxStaticCollider
+        Name: Floor
         Tag: Untagged
         Layer: 0
         Asset:

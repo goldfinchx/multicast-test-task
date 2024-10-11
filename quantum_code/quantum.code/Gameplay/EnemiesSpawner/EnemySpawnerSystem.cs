@@ -20,6 +20,8 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath {
         if (frame.Unsafe.TryGetPointer(entity, out Transform3D* transform)) {
             transform->Position = spawnPosition;
         }
+        
+        frame.Signals.OnEnemySpawn(entity);
     }
     
     private FPVector3 GetRandomSpawnPosition(Frame frame) {

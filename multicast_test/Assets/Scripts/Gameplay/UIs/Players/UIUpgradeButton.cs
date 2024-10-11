@@ -1,10 +1,9 @@
-﻿
-using Quantum.Gameplay.UpgradeCommand;
+﻿using Quantum.Gameplay.UpgradeCommand;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Gameplay.UIs {
+namespace Gameplay.UIs.Players {
     [RequireComponent(typeof(Button))]
     public class UIUpgradeButton : MonoBehaviour {
         

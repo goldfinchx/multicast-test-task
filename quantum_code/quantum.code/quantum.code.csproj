@@ -116,7 +116,9 @@
   <ItemGroup>
     <Content Include="Gameplay\BaseRotation\Rotation.qtn" />
     <Content Include="Gameplay\Damage\DamageEvent.qtn" />
-    <Content Include="Gameplay\Death\EnemyDeathEvent.qtn" />
+    <Content Include="Gameplay\Death\EntityDeathEvent.qtn" />
+    <Content Include="Gameplay\EnemiesSpawner\EnemySpawnEvent.qtn" />
+    <Content Include="Gameplay\EnemiesSpawner\EnemySpawnSignal.qtn" />
     <Content Include="Gameplay\PlayerSetup\PlayerSpawnSignal.qtn" />
     <Content Include="Gameplay\Combat\Attacker.qtn" />
     <Content Include="Gameplay\BaseMovement\Movement.qtn" />

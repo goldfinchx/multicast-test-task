@@ -1,11 +1,13 @@
-﻿using Quantum;
+﻿using Gameplay.UIs.Enemies;
+using Quantum;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace Gameplay {
     
-    public class ViewSimulationMediator : MonoBehaviour {
-        
+    public class ViewService : MonoBehaviour {
+
         public Subject<EventBase> EventsSubject { get; private set; }
 
         private void Awake() {

@@ -5,20 +5,24 @@ using TMPro;
 using UniRx;
 using UnityEngine;
 
-namespace Gameplay.UIs {
+namespace Gameplay.UIs.Players {
     public class UIStat : MonoBehaviour {
     
-        [SerializeField] private ViewSimulationMediator mediator;
         [SerializeField] private StatType type;
         [SerializeField] private TextMeshProUGUI title;
         [SerializeField] private TextMeshProUGUI level;
         [SerializeField] private TextMeshProUGUI value;
         [SerializeField] private TextMeshProUGUI chance;
-        
+
+        private ViewService service;
         private IDisposable subscription;
 
+        private void Awake() {
+            service = FindObjectOfType<ViewService>();
+        }
+
         private void OnEnable() {
-            subscription = mediator.EventsSubject
+            subscription = service.EventsSubject
                 .OfType<object, EventStatUpdate>()
                 .Where(evt => evt.Stat.Type == type)
                 .Subscribe(evt => UpdateStat(evt.Stat));
