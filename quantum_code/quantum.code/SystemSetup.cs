@@ -1,4 +1,5 @@
 ﻿using Quantum.Gameplay.BaseMovement;
+using Quantum.Gameplay.BaseRotation;
 using Quantum.Gameplay.Combat;
 using Quantum.Gameplay.Commands;
 using Quantum.Gameplay.Damage;
@@ -7,6 +8,7 @@ using Quantum.Gameplay.EnemiesSpawner;
 using Quantum.Gameplay.Events;
 using Quantum.Gameplay.Health;
 using Quantum.Gameplay.PlayerMovement;
+using Quantum.Gameplay.PlayerRotation;
 using Quantum.Gameplay.PlayerSetup;
 using Quantum.Gameplay.Stats;
 using Quantum.Gameplay.StatsUpdate;
@@ -44,6 +46,8 @@ namespace Quantum {
         new DeathSystem(),
         new MovementSystem(),
         new PlayerMovementSystem(),
+        new RotationSystem(),
+        new PlayerRotationSystem()
       ];
     }
   }

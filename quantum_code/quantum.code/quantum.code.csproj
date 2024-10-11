@@ -94,6 +94,7 @@
     <Compile Include="Gameplay\Health\HealthSetSystem.cs" />
     <Compile Include="Gameplay\Input\Input.cs" />
     <Compile Include="Gameplay\PlayerMovement\PlayerMovementSystem.cs" />
+    <Compile Include="Gameplay\PlayerRotation\PlayerRotationSystem.cs" />
     <Compile Include="Gameplay\UICommand\UISetupCommand.cs" />
     <Compile Include="Gameplay\PlayerSetup\PlayerSpawnSystem.cs" />
     <Compile Include="Gameplay\StatsUpdate\StatsUpdateSystem.cs" />
@@ -131,9 +132,6 @@
     <Content Include="Gameplay\Stats\PlayerStats.qtn" />
     <Content Include="Gameplay\UICommand\UISetupCommandSignal.qtn" />
     <Content Include="Gameplay\UpgradeCommand\UpgradeCommandSignal.qtn" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gameplay\PlayerRotation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

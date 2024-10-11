@@ -1,7 +1,10 @@
-﻿using Photon.Deterministic;
+﻿using System.Numerics;
+using Photon.Deterministic;
 using Quantum;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
 
 namespace Gameplay.Input {
     public class LocalInput : MonoBehaviour {
@@ -28,7 +31,7 @@ namespace Gameplay.Input {
         private void PollInput(CallbackPollInput callback) {
             Quantum.Input input = new();
             input.Movement = movementAction.ReadValue<Vector2>().ToFPVector2();
-            input.Rotation = rotationAction.ReadValue<Quaternion>().ToFPQuaternion();
+            input.Rotation = rotationAction.ReadValue<Vector2>().ToFPVector2();
             callback.SetInput(input, DeterministicInputFlags.Repeatable);
         }
         

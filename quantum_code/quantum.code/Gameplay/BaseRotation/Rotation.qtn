@@ -1,4 +1,4 @@
 component Rotation {
-    FPQuaternion Target;
+    [HideInInspector] FPQuaternion Target;
     FP Speed;
 }

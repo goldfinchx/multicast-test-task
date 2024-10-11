@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Photon.Deterministic;
+﻿using Photon.Deterministic;
 
 namespace Quantum.Gameplay.BaseRotation;
 
@@ -12,7 +11,7 @@ public unsafe class RotationSystem : SystemMainThreadFilter<RotationSystem.Filte
     }
 
     public override void Update(Frame frame, ref Filter filter) {
-        FP deltaTime = frame.DeltaTime;
-        filter.Transform->Rotation = FPQuaternion.Lerp(filter.Transform->Rotation, filter.Rotation->Target, deltaTime * filter.Rotation->Speed);
+        FP interpolation = filter.Rotation->Speed * frame.DeltaTime;
+        filter.Transform->Rotation = FPQuaternion.Slerp(filter.Transform->Rotation, filter.Rotation->Target, interpolation);
     }
 }

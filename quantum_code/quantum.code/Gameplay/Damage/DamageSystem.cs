@@ -11,9 +11,7 @@ public unsafe class DamageSystem : SystemSignalsOnly, ISignalOnAttack {
             Log.Warn("Damaged entity does not have health component!");
             return;
         }
-        
-        Log.Info("Attack! " + attacker + " -> " + victim + " Damage: " + damage + " health: " + health->Value);
-        
+
         health->Value -= damage;
         frame.Signals.OnDamage(victim, attacker, damage);
     }

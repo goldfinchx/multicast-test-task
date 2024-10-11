@@ -40,7 +40,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""name"": ""Rotation"",
                     ""type"": ""Value"",
                     ""id"": ""d7176469-f2e8-40ef-85df-3920275cff6f"",
-                    ""expectedControlType"": ""Quaternion"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true

@@ -1,4 +1,4 @@
 ﻿input {
     Byte EncodedMovement;
-    FPQuaternion Rotation;
+    Byte EncodedRotation;
 }
