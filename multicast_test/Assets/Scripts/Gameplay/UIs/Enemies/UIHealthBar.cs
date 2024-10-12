@@ -63,7 +63,8 @@ namespace Gameplay.UIs.Enemies {
         }
 
         private void UpdateVisuals() {
-            if (AttachedEntity == null) {
+            if (AttachedEntity is null) {
+               
                 return;
             }
 
@@ -71,7 +72,6 @@ namespace Gameplay.UIs.Enemies {
             Frame frame = game.Frames.Verified;
 
             if (!frame.TryGet(AttachedEntity.EntityRef, out Health health)) {
-                Debug.LogError("Health component not found on entity with health bar!");
                 return;
             }
 

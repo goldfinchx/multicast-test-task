@@ -15,6 +15,7 @@ public unsafe class PlayerRotationSystem : SystemMainThreadFilter<PlayerRotation
         Input* input = frame.GetPlayerInput(filter.Player->Reference);
         FPVector3 rotationInput = new(0, input->Rotation.X, 0);
         FPQuaternion rotationDelta = FPQuaternion.Euler(rotationInput);
-        filter.Rotation->Target = filter.Transform->Rotation * rotationDelta;
+        FPQuaternion target = filter.Rotation->Target * rotationDelta;
+        filter.Rotation->Target = target;
     }
 }

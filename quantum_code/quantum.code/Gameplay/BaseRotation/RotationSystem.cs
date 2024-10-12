@@ -11,7 +11,7 @@ public unsafe class RotationSystem : SystemMainThreadFilter<RotationSystem.Filte
     }
 
     public override void Update(Frame frame, ref Filter filter) {
-        FP interpolation = filter.Rotation->Speed * frame.DeltaTime;
+        FP interpolation = filter.Rotation->AdjustedSpeed * frame.DeltaTime;
         filter.Transform->Rotation = FPQuaternion.Slerp(filter.Transform->Rotation, filter.Rotation->Target, interpolation);
     }
 }

@@ -86,6 +86,10 @@ namespace Gameplay.UIs.Enemies {
         }
 
         private void CreateHealthBar(EntityView entityView) {
+            if (spawnedHealthBars.ContainsKey(entityView.EntityRef)) {
+                return;
+            }
+            
             UIHealthBar healthBar = objectPool.Get();
             healthBar.Setup(entityView);
             spawnedHealthBars.Add(entityView.EntityRef, healthBar);

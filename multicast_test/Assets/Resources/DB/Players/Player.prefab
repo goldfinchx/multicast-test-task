@@ -369,7 +369,7 @@ MonoBehaviour:
       Z:
         RawValue: 0
     Speed:
-      RawValue: 19660800
+      RawValue: 65536
 --- !u!1 &4004670494294713768
 GameObject:
   m_ObjectHideFlags: 0
