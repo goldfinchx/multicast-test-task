@@ -1,3 +1,4 @@
 ﻿event StatUpdate {
     Stat Stat;
+    EntityRef Player;
 }

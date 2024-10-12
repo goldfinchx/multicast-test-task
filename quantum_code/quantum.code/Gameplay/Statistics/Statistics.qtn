@@ -1,3 +1,0 @@
-component Statistics {
-    Int32 Kills;
-}

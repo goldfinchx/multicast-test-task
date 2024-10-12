@@ -7,14 +7,13 @@ using Quantum.Gameplay.Death;
 using Quantum.Gameplay.EnemiesSpawner;
 using Quantum.Gameplay.Events;
 using Quantum.Gameplay.Health;
+using Quantum.Gameplay.PlayerConnections;
 using Quantum.Gameplay.PlayerMovement;
 using Quantum.Gameplay.PlayerRotation;
 using Quantum.Gameplay.PlayerSetup;
-using Quantum.Gameplay.Statistics;
 using Quantum.Gameplay.StatsSetup;
 using Quantum.Gameplay.StatsUpdate;
 using Quantum.Gameplay.StatsUpgrade;
-using Quantum.Gameplay.UpgradeCommand;
 
 namespace Quantum {
   public static class SystemSetup {
@@ -36,6 +35,7 @@ namespace Quantum {
         // user systems go here
         new EventsSystem(),
         new CommandsSystem(),
+        new PlayerConnectionsSystem(),
         new PlayerSpawnSystem(),
         new StatsSetupSystem(),
         new StatsUpdateSystem(),
@@ -48,8 +48,7 @@ namespace Quantum {
         new MovementSystem(),
         new PlayerMovementSystem(),
         new RotationSystem(),
-        new PlayerRotationSystem(),
-        new StatisticsUpdateSystem()
+        new PlayerRotationSystem()
       ];
     }
   }

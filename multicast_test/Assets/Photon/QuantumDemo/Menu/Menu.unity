@@ -4788,6 +4788,9 @@ MonoBehaviour:
     EnemySpawnerData:
       Id:
         Value: 2142521147518200342
+    DefaultHeroStats:
+      Id:
+        Value: 3706211193629588597
 --- !u!224 &833318423
 RectTransform:
   m_ObjectHideFlags: 0

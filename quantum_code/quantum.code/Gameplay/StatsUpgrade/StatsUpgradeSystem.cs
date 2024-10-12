@@ -3,7 +3,6 @@
 public unsafe class StatsUpgradeSystem : SystemSignalsOnly, ISignalOnUpgradeCommand {
     
     public void OnUpgradeCommand(Frame frame, int player) {
-        Log.Info("Upgrade command received");
         if (!frame.TryGetPlayerEntity(player, out EntityRef playerEntity)) {
             Log.Error("Player entity not found, when receiving upgrade command!");
             return;

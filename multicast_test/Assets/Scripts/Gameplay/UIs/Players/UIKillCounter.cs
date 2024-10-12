@@ -20,35 +20,17 @@ namespace Gameplay.UIs.Players {
         private void OnEnable() {
             subscription = service.EventsSubject
                 .OfType<object, EventEnemyDeath>()
-                .Subscribe(HandleEnemyDeath);
+                .Where(evt => service.IsLocalPlayer(evt.Killer))
+                .Subscribe(_ => UpdateText());
         }
 
         private void OnDisable() {
             subscription?.Dispose();
         }
         
-        private void HandleEnemyDeath(EventEnemyDeath @event) {
-            QuantumGame game = QuantumRunner.Default.Game;
-            Frame frame = game.Frames.Verified;
-            
-            if (!frame.TryGet(@event.Killer, out Player player)) {
-                return;
-            }
-            
-            if (!frame.TryGet(@event.Killer, out Statistics statistics)) {
-                Debug.LogError("Statistics component not found on Player entity!");
-                return;
-            }
-            
-            if (!game.PlayerIsLocal(player.Reference)) {
-                return;
-            }
-
-            UpdateText(statistics.Kills);
-        }
-
-        private void UpdateText(int killCount) {
-            text.text = killCount.ToString();
+        private void UpdateText() {
+            int killCount = text.text == "" ? 0 : int.Parse(text.text);
+            text.text = (killCount + 1).ToString();
         }
 
     }

@@ -21,5 +21,17 @@ namespace Gameplay {
             EventsSubject.Dispose();
         }
 
+        public bool IsLocalPlayer(EntityRef entityRef) {
+            QuantumGame game = QuantumRunner.Default.Game;
+            Frame frame = game.Frames.Verified;
+
+            if (!frame.TryGet(entityRef, out Player player)) {
+                Debug.LogError("Player component not found on Player entity!");
+                return false;
+            }
+
+            return game.PlayerIsLocal(player.Reference);
+        }
+
     }
 }

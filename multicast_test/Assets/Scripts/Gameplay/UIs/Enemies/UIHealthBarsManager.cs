@@ -16,12 +16,13 @@ namespace Gameplay.UIs.Enemies {
         private ViewService service;
         
         private IDisposable spawnSubscription;
-        private readonly Dictionary<EntityRef, UIHealthBar> spawnedHealthBars = new();
+        private Dictionary<EntityRef, UIHealthBar> spawnedHealthBars;
 
         private void Awake() {
             service = FindObjectOfType<ViewService>();
             entityViewUpdater = FindObjectOfType<EntityViewUpdater>();
             objectPool = CreateObjectPool();
+            spawnedHealthBars = new Dictionary<EntityRef, UIHealthBar>();
             
             spawnSubscription = service.EventsSubject
                 .OfType<object, EventEnemySpawn>()
@@ -31,10 +32,30 @@ namespace Gameplay.UIs.Enemies {
             service.EventsSubject
                 .OfType<object, EventEnemyDeath>()
                 .Subscribe(HandleEnemyDeath);
+
+            Invoke(nameof(HandleMissedEntities), spawnDelay);
         }
         
         private void OnDestroy() {
             spawnSubscription.Dispose();
+        }
+
+        private void HandleMissedEntities() {
+            QuantumGame game = QuantumRunner.Default.Game;
+            Frame frame = game.Frames.Verified;
+            
+            ComponentIterator<EnemyMarker> componentIterator = frame.GetComponentIterator<EnemyMarker>();
+            ComponentIterator<EnemyMarker>.Enumerator iterator = componentIterator.GetEnumerator();
+            while (iterator.MoveNext()) {
+                EntityRef entityRef = iterator.Current.Entity;
+                EntityView entityView = entityViewUpdater.GetView(entityRef);
+                if (entityView is null) {
+                    Debug.LogWarning($"EntityView for {entityRef} not found");
+                    continue;
+                }
+                
+                CreateHealthBar(entityView);
+            }
         }
         
         private void HandleEnemySpawn(EventEnemySpawn spawnEvent) {
@@ -72,6 +93,15 @@ namespace Gameplay.UIs.Enemies {
         
         public void RemoveHealthBar(UIHealthBar healthBar) {
             objectPool.Release(healthBar);
+            
+            if (healthBar.AttachedEntity is null) {
+                return;
+            }
+            
+            if (!spawnedHealthBars.ContainsKey(healthBar.AttachedEntity.EntityRef)) {
+                return;
+            }
+            
             spawnedHealthBars.Remove(healthBar.AttachedEntity.EntityRef);
         }
         

@@ -13,7 +13,7 @@ public class DeathSystem : SystemSignalsOnly, ISignalOnDamage {
             return;
         }
 
-        frame.Destroy(victim);
         frame.Signals.OnDeath(victim, attacker);
+        frame.Destroy(victim);
     }
 }

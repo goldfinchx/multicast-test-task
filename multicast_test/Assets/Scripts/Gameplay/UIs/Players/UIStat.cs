@@ -25,8 +25,8 @@ namespace Gameplay.UIs.Players {
         private void OnEnable() {
             subscription = service.EventsSubject
                 .OfType<object, EventStatUpdate>()
-                .Where(evt => evt.Stat.Type == type)
-                .Subscribe(evt => UpdateStat(evt.Stat));
+                .Where(evt => evt.Stat.Type == type && service.IsLocalPlayer(evt.Player))
+                .Subscribe(HandleStatUpdate);
             Invoke(nameof(NotifySetup), 0.1f);
         }
         
@@ -40,6 +40,10 @@ namespace Gameplay.UIs.Players {
             subscription?.Dispose();
         }
 
+        private void HandleStatUpdate(EventStatUpdate evt) {
+            UpdateStat(evt.Stat);
+        }
+        
         private void UpdateStat(Stat stat) {
             title.text = GetStatTitle(stat.Type);
             StringBuilder stringBuilder = new();

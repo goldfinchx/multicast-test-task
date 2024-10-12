@@ -2,14 +2,7 @@
 
 namespace Quantum.Gameplay.EnemiesSpawner;
 
-public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath {
-
-    public override void OnInit(Frame frame) {
-        EnemySpawnerConfig spawnerConfig = frame.FindAsset<EnemySpawnerConfig>(frame.RuntimeConfig.EnemySpawnerData);
-        for (int i = 0; i < spawnerConfig.BaseEnemyCount; i++) {
-            SpawnEnemy(frame);
-        }
-    }
+public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath, ISignalOnAllPlayersConnected {
     
     private void SpawnEnemy(Frame frame) {
         AssetRef enemyPrefab = GetRandomEnemyPrefab(frame);
@@ -41,5 +34,12 @@ public unsafe class EnemySpawnerSystem : SystemSignalsOnly, ISignalOnDeath {
     
     public void OnDeath(Frame frame, EntityRef entity, EntityRef killer) {
         SpawnEnemy(frame);
+    }
+
+    public void OnAllPlayersConnected(Frame frame) {
+        EnemySpawnerConfig spawnerConfig = frame.FindAsset<EnemySpawnerConfig>(frame.RuntimeConfig.EnemySpawnerData);
+        for (int i = 0; i < spawnerConfig.BaseEnemyCount; i++) {
+            SpawnEnemy(frame);
+        }
     }
 }

@@ -33,10 +33,7 @@ namespace Gameplay.UIs.Enemies {
             }
 
             transform.position = AttachedEntity.transform.position + offset;
-            
-            // reverse rotation
             transform.rotation = Quaternion.LookRotation(transform.position - virtualCamera.transform.position);
-
         }
 
         private void OnEnable() {
