@@ -28,7 +28,7 @@ namespace Gameplay.Animations {
         }
     
         private IEnumerator ShowDamageEffect() {
-            meshRenderer.material.color = Color.red;
+            meshRenderer.material.color = defaultColor * Color.black;
             yield return new WaitForSeconds(damageEffectDuration);
             meshRenderer.material.color = defaultColor;
         }

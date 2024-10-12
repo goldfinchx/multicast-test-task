@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2055757169065604192}
   - component: {fileID: 684736843321245701}
   m_Layer: 0
-  m_Name: Easy Enemy
+  m_Name: Hard Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5bb5d1bce56a2f948a2f2369c09c7736, type: 2}
+  - {fileID: 2100000, guid: 177143edb4600f54e951beba5a1c3176, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prototype:
-    MaxValue: 50
+    MaxValue: 200
     Value:
       RawValue: 0
 --- !u!114 &-6173410287325659725
@@ -319,13 +319,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0120b722c3ca5454da1240b65656905f, type: 3}
-  m_Name: Easy EnemyEntityPrototype
+  m_Name: Hard EnemyEntityPrototype
   m_EditorClassIdentifier: 
   Settings:
     Identifier:
-      Path: Resources/DB/Enemies/Easy Enemy|EntityPrototype
+      Path: Resources/DB/Enemies/Hard Enemy|EntityPrototype
       Guid:
-        Value: 3349904209301087452
+        Value: 2098881710073662665
   Parent: {fileID: 1559800294590232648}
 --- !u!114 &-1049392867880890622
 MonoBehaviour:
@@ -337,11 +337,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d5baec4de8d2754a864a680181831e8, type: 3}
-  m_Name: Easy EnemyEntityView
+  m_Name: Hard EnemyEntityView
   m_EditorClassIdentifier: 
   Settings:
     Identifier:
-      Path: Resources/DB/Enemies/Easy Enemy|EntityView
+      Path: Resources/DB/Enemies/Hard Enemy|EntityView
       Guid:
-        Value: 841351352780042196
+        Value: 1943315333853127322
   Parent: {fileID: 151638590570058665}

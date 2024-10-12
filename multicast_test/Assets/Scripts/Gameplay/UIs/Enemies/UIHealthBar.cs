@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using Quantum;
 using TMPro;
 using UniRx;
@@ -13,12 +14,14 @@ namespace Gameplay.UIs.Enemies {
         [SerializeField] private Vector3 offset;
 
         private ViewService service;
+        private CinemachineVirtualCamera virtualCamera;
         
         public EntityView AttachedEntity { get; private set; }
         private IDisposable subscription;
 
         private void Awake() {
             service = FindObjectOfType<ViewService>();
+            virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
             slider = GetComponentInChildren<Scrollbar>();
             healthText = GetComponentInChildren<TextMeshProUGUI>();
         }
@@ -29,8 +32,11 @@ namespace Gameplay.UIs.Enemies {
                 return;
             }
 
-            Debug.Log(AttachedEntity.transform.position);
             transform.position = AttachedEntity.transform.position + offset;
+            
+            // reverse rotation
+            transform.rotation = Quaternion.LookRotation(transform.position - virtualCamera.transform.position);
+
         }
 
         private void OnEnable() {

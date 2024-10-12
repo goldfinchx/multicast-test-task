@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using Quantum;
 using Quantum.Gameplay.StatsCommands;
 using TMPro;
@@ -41,9 +42,22 @@ namespace Gameplay.UIs.Players {
 
         private void UpdateStat(Stat stat) {
             title.text = GetStatTitle(stat.Type);
-            level.text = stat.Level.ToString();
-            value.text = stat.Value.ToString();
-            chance.text = stat.Chance + "%";
+            StringBuilder stringBuilder = new();
+            
+            stringBuilder
+                .Append("Level:")
+                .Append(stat.Level);
+            level.text = stringBuilder.ToString();
+            
+            stringBuilder.Clear()
+                .Append("Value:")
+                .Append(stat.Value);
+            value.text = stringBuilder.ToString();
+
+            stringBuilder.Clear()
+                .Append("Chance:")
+                .Append(stat.Chance).Append("%");
+            chance.text = stringBuilder.ToString();
         }
 
         private string GetStatTitle(StatType statType) {

@@ -61,6 +61,16 @@ MonoBehaviour:
         Id:
           Value: 1710471675203725834
       ResourcePath: DB/Map1
+    - Path: Resources/DB/Enemies/Hard Enemy|EntityView
+      AssetRef:
+        Id:
+          Value: 1943315333853127322
+      ResourcePath: DB/Enemies/Hard Enemy
+    - Path: Resources/DB/Enemies/Hard Enemy|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 2098881710073662665
+      ResourcePath: DB/Enemies/Hard Enemy
     - Path: Resources/DB/Configs/Enemy Spawner Config
       AssetRef:
         Id:
@@ -71,6 +81,11 @@ MonoBehaviour:
         Id:
           Value: 3093865984696992040
       ResourcePath: DB/Map1_mesh
+    - Path: Resources/DB/Enemies/Medium Enemy|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 3153206645767463753
+      ResourcePath: DB/Enemies/Medium Enemy
     - Path: Resources/DB/Enemies/Easy Enemy|EntityPrototype
       AssetRef:
         Id:
@@ -81,3 +96,8 @@ MonoBehaviour:
         Id:
           Value: 3706211193629588597
       ResourcePath: DB/Configs/Default Hero Stats Config
+    - Path: Resources/DB/Enemies/Medium Enemy|EntityView
+      AssetRef:
+        Id:
+          Value: 4147235198278446413
+      ResourcePath: DB/Enemies/Medium Enemy
