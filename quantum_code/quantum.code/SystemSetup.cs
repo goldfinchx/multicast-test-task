@@ -7,7 +7,6 @@ using Quantum.Gameplay.Death;
 using Quantum.Gameplay.EnemiesSpawner;
 using Quantum.Gameplay.Events;
 using Quantum.Gameplay.Health;
-using Quantum.Gameplay.PlayerConnections;
 using Quantum.Gameplay.PlayerMovement;
 using Quantum.Gameplay.PlayerRotation;
 using Quantum.Gameplay.PlayerSetup;
@@ -29,7 +28,6 @@ namespace Quantum {
         // user systems go here
         new EventsSystem(),
         new CommandsSystem(),
-        new PlayerConnectionsSystem(),
         new PlayerSpawnSystem(),
         new StatsSetupSystem(),
         new StatsUpdateSystem(),

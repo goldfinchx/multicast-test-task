@@ -41,6 +41,10 @@ namespace Gameplay.UIs.Enemies {
         }
 
         private void HandleMissedEntities() {
+            if (spawnedHealthBars.Count > 0) {
+                return;
+            }
+            
             QuantumGame game = QuantumRunner.Default.Game;
             Frame frame = game.Frames.Verified;
             
@@ -49,11 +53,12 @@ namespace Gameplay.UIs.Enemies {
             while (iterator.MoveNext()) {
                 EntityRef entityRef = iterator.Current.Entity;
                 EntityView entityView = entityViewUpdater.GetView(entityRef);
-                if (entityView is null) {
+                if (entityView == null) {
                     Debug.LogWarning($"EntityView for {entityRef} not found");
                     continue;
                 }
                 
+                Debug.Log($"Missed entity: {entityRef}");
                 CreateHealthBar(entityView);
             }
         }
@@ -61,7 +66,7 @@ namespace Gameplay.UIs.Enemies {
         private void HandleEnemySpawn(EventEnemySpawn spawnEvent) {
             EntityRef entityRef = spawnEvent.Enemy;
             EntityView entityView = entityViewUpdater.GetView(entityRef);
-            if (entityView is null) {
+            if (entityView == null) {
                 Debug.LogWarning($"EntityView for {entityRef} not found");
                 return;
             }
@@ -82,23 +87,20 @@ namespace Gameplay.UIs.Enemies {
                 UIHealthBar instance = Instantiate(prefab, transform);
                 instance.gameObject.SetActive(false);
                 return instance;
-            }, actionOnRelease: bar => bar.gameObject.SetActive(false));
+            });
         }
 
         private void CreateHealthBar(EntityView entityView) {
-            if (spawnedHealthBars.ContainsKey(entityView.EntityRef)) {
-                return;
-            }
-            
             UIHealthBar healthBar = objectPool.Get();
             healthBar.Setup(entityView);
-            spawnedHealthBars.Add(entityView.EntityRef, healthBar);
+            spawnedHealthBars.TryAdd(entityView.EntityRef, healthBar);
         }
-        
-        public void RemoveHealthBar(UIHealthBar healthBar) {
+
+        private void RemoveHealthBar(UIHealthBar healthBar) {
+            healthBar.Reset(); 
             objectPool.Release(healthBar);
             
-            if (healthBar.AttachedEntity is null) {
+            if (healthBar.AttachedEntity == null) {
                 return;
             }
             

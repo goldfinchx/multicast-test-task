@@ -17,7 +17,7 @@ MonoBehaviour:
       Path: Resources/DB/Configs/Enemy Spawner Config
       Guid:
         Value: 2142521147518200342
-    BaseEnemyCount: 3
+    BaseEnemyCount: 4
     MaxSpawnRadius: 10
     YLevel: 1
     EnemyPrefabs:

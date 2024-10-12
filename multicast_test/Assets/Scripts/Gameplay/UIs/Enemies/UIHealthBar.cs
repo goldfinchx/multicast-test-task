@@ -25,10 +25,9 @@ namespace Gameplay.UIs.Enemies {
             slider = GetComponentInChildren<Scrollbar>();
             healthText = GetComponentInChildren<TextMeshProUGUI>();
         }
-
-
+        
         private void Update() {
-            if (AttachedEntity is null) {
+            if (AttachedEntity == null) {
                 return;
             }
 
@@ -48,8 +47,8 @@ namespace Gameplay.UIs.Enemies {
             AttachedEntity = null;
         }
 
-        private void HandleDamageEvent(EventDamage @event) {
-            if (@event.Victim != AttachedEntity.EntityRef) {
+        private void HandleDamageEvent(EventDamage damageEvent) {
+            if (damageEvent.Victim != AttachedEntity.EntityRef) {
                 return;
             }
 
@@ -63,8 +62,7 @@ namespace Gameplay.UIs.Enemies {
         }
 
         private void UpdateVisuals() {
-            if (AttachedEntity is null) {
-               
+            if (AttachedEntity == null) {
                 return;
             }
 
@@ -77,6 +75,11 @@ namespace Gameplay.UIs.Enemies {
 
             slider.size = health.Value.AsFloat / health.MaxValue;
             healthText.text = $"{health.Value.AsInt} / {health.MaxValue}";
+        }
+
+        public void Reset() {
+            gameObject.SetActive(false);
+            AttachedEntity = null;
         }
     }
 }
